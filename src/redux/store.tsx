@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import mealReducer from "./slices/mealSlice";
+import cartReducer from "./slices/cartSlice";
 
 export const store = configureStore({
     reducer: {
-        meals: mealReducer
+        meals: mealReducer,
+        cart: cartReducer
     }
 });
 
