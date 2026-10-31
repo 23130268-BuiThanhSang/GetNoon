@@ -3,10 +3,10 @@
 }
 
 .home_page header, .home_page footer {
-    background-color: #349AFF;
-    color: white;
+    background-color: #B9FF96;
     min-height: 100px;
     width: 100%;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,6 +17,19 @@
     width: 100%;
     min-height: 550px;
     display: flex;
+    color: black;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.banner_container {
+    background-color: #DAFFBF;
+    min-height: 200px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
