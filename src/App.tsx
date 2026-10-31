@@ -1,5 +1,5 @@
 import Footer from './components/Footer';
-import './App.css'
+import './assets/scss/Style.css'
 import Banner from "./components/Banner.tsx";
 import Header from "./components/Header.tsx";
 
