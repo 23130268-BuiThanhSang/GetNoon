@@ -8,6 +8,8 @@ export default function Header() {
                 <button className="button_product_list">Sản Phẩm</button>
                 <button className="button_policy">Chính sách</button>
             </div>
+            <hr/>
+            <hr/>
         </header>
     );
 }
