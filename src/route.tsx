@@ -3,6 +3,8 @@ import MainLayout from "./layouts/MainLayout.tsx";
 import Home from "./components/Home.tsx";
 import Meals from "./components/Meals.tsx";
 import MealDetail from "./components/MealsDetail.tsx";
+import Login from "./pages/Login.tsx";
+import Register from "./pages/Register.tsx";
 
 const router = createBrowserRouter([
     {
@@ -21,8 +23,16 @@ const router = createBrowserRouter([
             {
                 path: "meals/:id",
                 element: <MealDetail />
-            }
-        ]
+            },
+        ],
+    },
+    {
+        path: "/Login",
+        element: <Login />
+    },
+    {
+        path: "/Register",
+        element: <Register />
     }
 ]);
 
