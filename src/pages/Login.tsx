@@ -20,8 +20,7 @@ export default function Login() {
                <div className="login_right">
                    <div className="right_content">
                        <h2>Chào mừng trở lại!</h2>
-                       <p>Rất vui được gặp lại bạn! Hãy đăng nhập ngay và chọn món ăn phù hợp với nhu cầu của bạn, chúng tôi
-                           cam kết sẽ giao bữa trưa của bạn kịp thời.</p>
+                       <p>Hãy đăng nhập ngay và chọn món ăn phù hợp với nhu cầu của bạn, chúng tôi sẽ giao bữa trưa cho bạn đúng hẹn.</p>
                        <div className="other_option">
                            <p>Chưa có tài khoản?</p>
                            <p>Đăng ký</p>
