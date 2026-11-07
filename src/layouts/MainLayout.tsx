@@ -1,17 +1,12 @@
-import { Link, Outlet } from "react-router-dom";
+// import { Link, Outlet } from "react-router-dom";
 import Footer from "./Footer.tsx";
 import Header from "./Header.tsx";
+import {Outlet} from "react-router-dom";
 
 function MainLayout() {
     return (
         <div>
             <Header/>
-            <nav>
-                <Link to="/">Home</Link>
-                {" | "}
-                <Link to="/meals">Meals</Link>
-            </nav>
-            <hr />
             <Outlet />
             <Footer />
         </div>

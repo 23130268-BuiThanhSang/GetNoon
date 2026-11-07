@@ -5,6 +5,8 @@ import Meals from "./components/Meals.tsx";
 import MealDetail from "./components/MealsDetail.tsx";
 import Login from "./pages/Login.tsx";
 import Register from "./pages/Register.tsx";
+import Policy from "./components/Policy.tsx";
+import Cart from "./components/Cart.tsx";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
+            path:"policy",
+            element:<Policy/>
+            },
+            {
                 path: "meals",
                 element: <Meals />
             },
@@ -24,6 +30,10 @@ const router = createBrowserRouter([
                 path: "meals/:id",
                 element: <MealDetail />
             },
+            {
+                path:"cart",
+                element:<Cart/>
+            }
         ],
     },
     {

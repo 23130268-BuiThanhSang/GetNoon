@@ -2,7 +2,6 @@ export default function Footer() {
     return (
         <footer className="footer_container">
             <hr/>
-            <hr/>
             <p>App Order Lunch</p>
             <p>Contact us: apporderlunch@gmail.com</p>
         </footer>
