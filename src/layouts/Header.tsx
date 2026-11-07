@@ -19,9 +19,7 @@ export default function Header() {
                 <Link to="/Policy" className="button_policy">Chính Sách</Link>
             </nav>
             <nav className="navigation_profile">
-                <Link to="/Cart" className="button_Cart">
-                    <i className="fa-solid fa-cart-shopping"></i>
-                </Link>
+
                 { isLogIn ? (
                     <Link to="/Profile" className="button_profile">
                         <img src = {defaultAvatar} alt="avatar" className="avatar_image" />
@@ -32,6 +30,9 @@ export default function Header() {
                         <Link to="/Register" className="button_register"> Đăng Ký</Link>
                     </>
                     )}
+                <Link to="/Cart" className="button_Cart">
+                <i className="fa-solid fa-cart-shopping"></i>
+                </Link>
             </nav>
         </header>
     );
