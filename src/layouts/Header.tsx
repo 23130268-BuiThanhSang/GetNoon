@@ -1,19 +1,39 @@
 import '../assets/scss/header.css';
-
+import logo from '../assets/Images/logo.png';
+import defaultAvatar from '../assets/Images/defaultavatar.jpg';
+import {Link} from "react-router-dom";
+import {useState} from "react";
 export default function Header() {
+    const [isLogIn]=useState(false);
     return (
+
         <header className="header_container">
-            <div className="logo_container">
-                image
-            </div>
-            <div className="button_container">
-                <button className="button_product_list">Sản Phẩm</button>
-                <button className="button_policy">Chính sách</button>
-                <button className="button_register">Đăng ký</button>
-                <button className="button_login">Đăng nhập</button>
-            </div>
-            <hr/>
-            <hr/>
+
+            <Link to="/" className="button_logo">
+                <img src = {logo} alt="Logo" className="logo_image" />
+                <span className="logo_text">GetNoon</span>
+            </Link>
+
+            <nav className="navigation_menu">
+                <Link to="/Products" className="button_product_list">Món Ăn</Link>
+                <Link to="/Policy" className="button_policy">Chính Sách</Link>
+            </nav>
+            <nav className="navigation_profile">
+
+                { isLogIn ? (
+                    <Link to="/Profile" className="button_profile">
+                        <img src = {defaultAvatar} alt="avatar" className="avatar_image" />
+                    </Link>
+                ):(
+                    <>
+                        <Link to="/Login" className="button_login">Đăng Nhập</Link>
+                        <Link to="/Register" className="button_register"> Đăng Ký</Link>
+                    </>
+                    )}
+                <Link to="/Cart" className="button_Cart">
+                <i className="fa-solid fa-cart-shopping"></i>
+                </Link>
+            </nav>
         </header>
     );
 }

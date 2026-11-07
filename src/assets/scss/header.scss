@@ -1,6 +1,89 @@
-.button_container{
+@use "VariableGlobal" as *;
+
+.header_container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  height: $headerHeight;
+  padding: 0 24px;
+  background: $backgroundColor;
+  border-bottom: 1px solid $borderColor;
+  a{
+    text-decoration: none;
+    color: $textColor;
+    font-weight:500;
+  }
+  .button_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    .logo_text{
+      color: $textColor;
+      font-size: 27px;
+    }
+    .logo_image{
+      height: 40px;
+      display: block;
+    }
+  }
+  .navigation_menu,
+  .navigation_profile{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .button_product_list,
+  .button_policy{
+    padding:  8px 12px;
+    border-radius: 6px;
+    transition: color 0.2s,background 0.2s;
+
+  }
+  .button_product_list:hover,
+  .button_policy:hover{
+    color:$primaryColor;
+    background: $backgroundColorSoft;
+    border: solid 1px #0f5132;
+  }
+  .button_Cart {
+    font-size: 20px;
+    transition: color 0.2s;
+  }
+  .button_Cart{
+    font-size: 20px;
+      color: $accentColor;
+  }
+  .button_login,
+  .button_register {
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .button_register {
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+  }
+  .button_register:hover {
+    background: $primaryColorLight;
+  }
+  .button_login {
+    background: $primaryColor;
+    color: #fff;
+  }
+  .button_login:hover{
+    background: $primaryColorDark;
+  }
+
+  .avatar_image{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
 }
