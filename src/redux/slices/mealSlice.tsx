@@ -1,48 +1,72 @@
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import { createSlice } from "@reduxjs/toolkit";
+type Meal = {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    image: string;
+    category: string;
+};
+type ApiRecipe = {
+    id: number;
+    name: string;
+    instructions: string[];
+    image: string;
+    cuisine: string;
+};
 
-const mockMeals = [
-    {
-        id: 1,
-        name: "Com Tam Suon",
-        description: "Broken rice with grilled pork ribs.",
-        price: 35000,
-        image: "/images/com-tam.jpg",
-        category: "Rice",
-        available: true
-    },
-    {
-        id: 2,
-        name: "Pho Bo",
-        description: "Vietnamese beef noodle soup.",
-        price: 40000,
-        image: "/images/pho-bo.jpg",
-        category: "Noodles",
-        available: true
-    },
-    {
-        id: 3,
-        name: "Bun Cha",
-        description: "Grilled pork with vermicelli.",
-        price: 35000,
-        image: "/images/bun-cha.jpg",
-        category: "Noodles",
-        available: true
+type ApiResponse = {
+    recipes: ApiRecipe[];
+};
+
+export const fetchMeals = createAsyncThunk(
+    "meals/fetchMeals",
+    async () => {
+        const response = await fetch("https://dummyjson.com/recipes");
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch meals");
+        }
+
+        const data: ApiResponse = await response.json();
+
+        const meals: Meal[] = data.recipes.map((recipe) => ({
+            id: recipe.id,
+            name: recipe.name,
+            description: recipe.instructions.join(" "),
+            price: Math.floor(Math.random() * 40000) + 20000,
+            image: recipe.image,
+            category: recipe.cuisine
+        }));
+
+        return meals;
     }
-];
+);
 
 const mealSlice = createSlice({
     name: "meals",
     initialState: {
-        items: mockMeals
+        items: [] as Meal[],
+        loading: false,
+        error: null as string | null
     },
-    reducers: {
-        setMeals: (state, action) => {
-            state.items = action.payload;
-        }
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchMeals.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchMeals.fulfilled, (state, action) => {
+                state.loading = false;
+                state.items = action.payload;
+            })
+            .addCase(fetchMeals.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message ?? "Something went wrong";
+            });
     }
 });
-
-export const { setMeals } = mealSlice.actions;
 
 export default mealSlice.reducer;
