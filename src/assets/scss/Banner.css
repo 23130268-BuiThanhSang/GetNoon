@@ -1,11 +1,11 @@
 .banner_container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   gap: 40px;
   padding: 48px;
   background: #f0fdf4;
-  border: 1px solid #f1e7da;
 }
 .banner_container .intro_container {
   flex: 1;
@@ -31,13 +31,13 @@
 }
 .banner_container .intro_container .banner_actions {
   display: flex;
-  gap: 12px;
   margin-top: 24px;
+  gap: 12px;
 }
 .banner_container .intro_container .banner_actions .btn_order {
   color: #fff;
   background: #f97316;
-  border: 1px solid #f97316;
+  border-color: #f97316;
 }
 .banner_container .intro_container .banner_actions .btn_order:hover {
   background: #ea580c;
@@ -46,15 +46,15 @@
 .banner_container .intro_container .banner_actions .btn_policy {
   color: #166534;
   background: transparent;
-  border: 1px solid #166534;
 }
 .banner_container .intro_container .banner_actions .btn_policy:hover {
-  background: #dcfce7;
+  border-color: #14532d;
 }
 .banner_container .image_container {
   position: relative;
   flex: 1;
   aspect-ratio: 4/3;
+  overflow: hidden;
 }
 .banner_container .image_container .photo {
   position: absolute;
@@ -63,8 +63,8 @@
   width: 85%;
   height: 85%;
   object-fit: cover;
-  border: 8px solid #fff;
-  border-radius: 12px;
+  border: 5px solid #fff;
+  border-radius: 15px;
   box-shadow: 0 8px 20px rgba(45, 32, 19, 0.25);
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
@@ -78,7 +78,7 @@
 }
 .banner_container .image_container .photo.pos-2 {
   z-index: 4;
-  transform: translate(2%, 10%) rotate(-6deg);
+  transform: translate(2%, 10%) rotate(-3deg);
 }
 .banner_container .image_container .photo.pos-3, .banner_container .image_container .photo.pos-4 {
   z-index: 3;
@@ -89,15 +89,6 @@
   z-index: 7;
   opacity: 0;
   transform: translate(70%, 0%) rotate(14deg);
-}
-@media (max-width: 768px) {
-  .banner_container {
-    flex-direction: column;
-    padding: 24px;
-  }
-  .banner_container .intro_container h1 {
-    font-size: 28px;
-  }
 }
 
 /*# sourceMappingURL=Banner.css.map */
