@@ -1,0 +1,103 @@
+.banner_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 48px;
+  background: #f0fdf4;
+  border: 1px solid #f1e7da;
+}
+.banner_container .intro_container {
+  flex: 1;
+}
+.banner_container .intro_container .banner_intro {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #166534;
+  background: #dcfce7;
+  border-radius: 20px;
+}
+.banner_container .intro_container h1 {
+  margin-bottom: 16px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #14532d;
+}
+.banner_container .intro_container p {
+  color: #6b5b4b;
+}
+.banner_container .intro_container .banner_actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.banner_container .intro_container .banner_actions .btn_order {
+  color: #fff;
+  background: #f97316;
+  border: 1px solid #f97316;
+}
+.banner_container .intro_container .banner_actions .btn_order:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+}
+.banner_container .intro_container .banner_actions .btn_policy {
+  color: #166534;
+  background: transparent;
+  border: 1px solid #166534;
+}
+.banner_container .intro_container .banner_actions .btn_policy:hover {
+  background: #dcfce7;
+}
+.banner_container .image_container {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 4/3;
+}
+.banner_container .image_container .photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  border: 8px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(45, 32, 19, 0.25);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+.banner_container .image_container .photo.pos-0 {
+  z-index: 6;
+  transform: translate(7%, 7%) rotate(0deg);
+}
+.banner_container .image_container .photo.pos-1 {
+  z-index: 5;
+  transform: translate(12%, 10%) rotate(6deg);
+}
+.banner_container .image_container .photo.pos-2 {
+  z-index: 4;
+  transform: translate(2%, 10%) rotate(-6deg);
+}
+.banner_container .image_container .photo.pos-3, .banner_container .image_container .photo.pos-4 {
+  z-index: 3;
+  opacity: 0;
+  transform: translate(7%, 7%) rotate(0deg);
+}
+.banner_container .image_container .photo.pos-5 {
+  z-index: 7;
+  opacity: 0;
+  transform: translate(70%, 0%) rotate(14deg);
+}
+@media (max-width: 768px) {
+  .banner_container {
+    flex-direction: column;
+    padding: 24px;
+  }
+  .banner_container .intro_container h1 {
+    font-size: 28px;
+  }
+}
+
+/*# sourceMappingURL=Banner.css.map */

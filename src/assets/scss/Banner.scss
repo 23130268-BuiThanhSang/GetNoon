@@ -1,0 +1,119 @@
+@use "VariableGlobal" as *;
+.banner_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 48px;
+  background: $backgroundColorSoft;
+  border: 1px solid $borderColor;
+
+  .intro_container {
+    flex: 1;
+
+    .banner_intro {
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: $primaryColor;
+      background: $primaryColorLight;
+      border-radius: 20px;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+      font-size: 40px;
+      font-weight: 700;
+      color: $primaryColorDark;
+    }
+
+    p {
+      color: $textColorMuted;
+    }
+
+    .banner_actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+
+      .btn_order {
+        color: #fff;
+        background: $accentColor;
+        border: 1px solid $accentColor;
+
+        &:hover {
+          background: $accentColorDark;
+          border-color: $accentColorDark;
+        }
+      }
+
+      .btn_policy {
+        color: $primaryColor;
+        background: transparent;
+        border: 1px solid $primaryColor;
+
+        &:hover {
+          background: $primaryColorLight;
+        }
+      }
+    }
+  }
+
+  .image_container {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 4 / 3;
+
+    .photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 85%;
+      height: 85%;
+      object-fit: cover;
+      border: 8px solid #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba($textColor, 0.25);
+      transition: transform 0.8s ease, opacity 0.8s ease;
+
+      // ảnh trên cùng
+      &.pos-0 {
+        z-index: 6;
+        transform: translate(7%, 7%) rotate(0deg);
+      }
+      // 2 ảnh lót bên dưới, nghiêng hai phía
+      &.pos-1 {
+        z-index: 5;
+        transform: translate(12%, 10%) rotate(6deg);
+      }
+      &.pos-2 {
+        z-index: 4;
+        transform: translate(2%, 10%) rotate(-6deg);
+      }
+      // các ảnh còn lại giấu dưới xấp
+      &.pos-3,
+      &.pos-4 {
+        z-index: 3;
+        opacity: 0;
+        transform: translate(7%, 7%) rotate(0deg);
+      }
+      // ảnh vừa bị lấy ra khỏi xấp: bay sang phải và mờ dần
+      &.pos-5 {
+        z-index: 7;
+        opacity: 0;
+        transform: translate(70%, 0%) rotate(14deg);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 24px;
+
+    .intro_container h1 {
+      font-size: 28px;
+    }
+  }
+}
