@@ -1,0 +1,97 @@
+@use "VariableGlobal" as *;
+.banner_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 48px;
+  background: $backgroundColorSoft;
+  .intro_container{
+    flex: 1;
+    .banner_intro{
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: $primaryColor;
+      background: $primaryColorLight;
+      border-radius: 20px;
+    }
+    h1{
+      margin-bottom: 16px;
+      font-size: 40px;
+      font-weight: 700;
+      color: $primaryColorDark;
+    }
+    p{
+      color: $textColorMuted;
+    }
+    .banner_actions{
+      display: flex;
+      margin-top: 24px;
+      gap: 12px;
+      .btn_order{
+        color:#fff;
+        background: $accentColor;
+        border-color: $accentColor;
+        &:hover{
+          background: $accentColorDark;
+          border-color: $accentColorDark;
+        }
+      }
+      .btn_policy{
+        color: $primaryColor;
+        background: transparent;
+        &:hover{
+          border-color: $primaryColorDark;
+        }
+      }
+    }
+  }
+  .image_container{
+    position: relative;
+    flex:1;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    .photo{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 85%;
+      height: 85%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba($textColor, 0.25);
+      transition: transform 0.8s ease, opacity 0.8s ease;
+
+
+      &.pos-0{
+        z-index: 6;
+        transform: translate(7%,7%) rotate(0deg);
+      }
+      &.pos-1{
+        z-index: 5;
+        transform: translate(12%,10%) rotate(6deg);
+      }
+      &.pos-2{
+        z-index: 4;
+        transform: translate(2%,10%) rotate(-3deg);
+      }
+      &.pos-3,
+      &.pos-4,{
+        z-index: 3;
+        opacity: 0;
+        transform: translate(7%,7%) rotate(0deg);
+      }
+      &.pos-5{
+        z-index: 7;
+        opacity: 0;
+        transform: translate(70%,0%) rotate(14deg);
+      }
+
+    }
+  }
+}

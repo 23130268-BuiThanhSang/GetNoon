@@ -1,7 +1,9 @@
+import Banner from "../components/Banner.tsx";
+
 function Home() {
     return (
       <div>
-          Home page
+          <Banner/>
       </div>
     );
 }

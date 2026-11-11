@@ -21,14 +21,18 @@ export default function Header() {
                     <i className="fa-solid fa-cart-shopping"></i>
                 </Link>
                 { isLogIn ? (
-                    <Link to="/Profile" className="button_profile">
-                        <img src = {defaultAvatar} alt="avatar" className="avatar_image" />
-                    </Link>
-                ):(
+                    // <Link to="/Profile" className="button_profile">
+                    //     <img src = {defaultAvatar} alt="avatar" className="avatar_image" />
+                    // </Link>
                     <>
                         <Link to="/Login" className="button_login">Đăng Nhập</Link>
                         <Link to="/Register" className="button_register"> Đăng Ký</Link>
+
                     </>
+                ):(
+                    <Link to="/Profile" className="button_profile">
+                    <img src = {defaultAvatar} alt="avatar" className="avatar_image" />
+                    </Link>
                     )}
             </nav>
         </header>

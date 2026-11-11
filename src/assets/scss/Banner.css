@@ -1,0 +1,94 @@
+.banner_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 48px;
+  background: #f0fdf4;
+}
+.banner_container .intro_container {
+  flex: 1;
+}
+.banner_container .intro_container .banner_intro {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #166534;
+  background: #dcfce7;
+  border-radius: 20px;
+}
+.banner_container .intro_container h1 {
+  margin-bottom: 16px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #14532d;
+}
+.banner_container .intro_container p {
+  color: #6b5b4b;
+}
+.banner_container .intro_container .banner_actions {
+  display: flex;
+  margin-top: 24px;
+  gap: 12px;
+}
+.banner_container .intro_container .banner_actions .btn_order {
+  color: #fff;
+  background: #f97316;
+  border-color: #f97316;
+}
+.banner_container .intro_container .banner_actions .btn_order:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+}
+.banner_container .intro_container .banner_actions .btn_policy {
+  color: #166534;
+  background: transparent;
+}
+.banner_container .intro_container .banner_actions .btn_policy:hover {
+  border-color: #14532d;
+}
+.banner_container .image_container {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.banner_container .image_container .photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(45, 32, 19, 0.25);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+.banner_container .image_container .photo.pos-0 {
+  z-index: 6;
+  transform: translate(7%, 7%) rotate(0deg);
+}
+.banner_container .image_container .photo.pos-1 {
+  z-index: 5;
+  transform: translate(12%, 10%) rotate(6deg);
+}
+.banner_container .image_container .photo.pos-2 {
+  z-index: 4;
+  transform: translate(2%, 10%) rotate(-3deg);
+}
+.banner_container .image_container .photo.pos-3, .banner_container .image_container .photo.pos-4 {
+  z-index: 3;
+  opacity: 0;
+  transform: translate(7%, 7%) rotate(0deg);
+}
+.banner_container .image_container .photo.pos-5 {
+  z-index: 7;
+  opacity: 0;
+  transform: translate(70%, 0%) rotate(14deg);
+}
+
+/*# sourceMappingURL=Banner.css.map */
