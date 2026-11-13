@@ -5,6 +5,7 @@ import Meals from "./pages/Meals.tsx";
 import MealDetail from "./components/MealsDetail.tsx";
 import Login from "./pages/Login.tsx";
 import Register from "./pages/Register.tsx";
+import ForgetPass from "./pages/ForgetPass.tsx";
 import Policy from "./pages/Policy.tsx";
 import Cart from "./pages/Cart.tsx";
 import Profile from "./pages/Profile.tsx";
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
     {
         path: "/Register",
         element: <Register />
+    },
+    {
+        path: "/ForgetPass",
+        element: <ForgetPass />
     }
 ]);
 

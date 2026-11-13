@@ -19,7 +19,7 @@
 }
 
 .left_content h2{
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .login_left{
@@ -40,8 +40,8 @@
 }
 
 .left_content input{
-  width: 100%;
-  height: 25px;
+  width: 97%;
+  height: 30px;
   padding: 10px;
   border: 1px solid lightgray;
   outline: none;
@@ -53,7 +53,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 107%;
+  width: 97%;
   height: 40px;
   border: none;
   outline: none;
@@ -63,6 +63,10 @@
   color: white;
   padding: 10px;
   font-size: 20px;
+}
+
+.left_content button:hover{
+  background-color: #6CEB52;
 }
 
 .login_right {
@@ -100,6 +104,31 @@
 
 .right_content p{
   color: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+.green_bg{
+  color: #FFFC3E !important;
+}
+
+.white_bg{
+  color: #54B840;
+}
+
+.form_message {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.form_message.success{
+  color: #54B840;
+}
+
+.form_message.error{
+  color: #FF5555;
 }
 
 

@@ -3,12 +3,21 @@ import logo from '../assets/Images/logo.png';
 import defaultAvatar from '../assets/Images/defaultavatar.jpg';
 import {Link} from "react-router-dom";
 import {useState} from "react";
-export default function Header() {
-    const [isLogIn]=useState(false);
+export function Header() {
+    const [isLogIn, setIsLogin] = useState(() => {
+        return localStorage.getItem('isLogin') === 'true';
+    });
+
+    const handleLogout = () => {
+        localStorage.removeItem('isLogin');
+        localStorage.removeItem('currentUser');
+        setIsLogin(false);
+        window.location.reload();
+    }
     return (
         <header className="header_container">
             <Link to="/" className="button_logo">
-                <img src = {logo} alt="Logo" className="logo_image" />
+                <img src={logo} alt="Logo" className="logo_image"/>
                 <span className="logo_text">GetNoon</span>
             </Link>
 
@@ -20,20 +29,22 @@ export default function Header() {
                 <Link to="/cart" className="button_Cart">
                     <i className="fa-solid fa-cart-shopping"></i>
                 </Link>
-                { isLogIn ? (
+                {isLogIn ? (
                     // <Link to="/Profile" className="button_profile">
                     //     <img src = {defaultAvatar} alt="avatar" className="avatar_image" />
                     // </Link>
                     <>
+                    <Link to="/Profile" className="button_profile">
+                        <img src={defaultAvatar} alt="avatar" className="avatar_image"/>
+                    </Link>
+                        <button className="button_register" onClick={handleLogout}>Đăng xuất</button>
+                    </>
+                ) : (
+                    <>
                         <Link to="/Login" className="button_login">Đăng Nhập</Link>
                         <Link to="/Register" className="button_register"> Đăng Ký</Link>
-
                     </>
-                ):(
-                    <Link to="/Profile" className="button_profile">
-                    <img src = {defaultAvatar} alt="avatar" className="avatar_image" />
-                    </Link>
-                    )}
+                )}
             </nav>
         </header>
     );

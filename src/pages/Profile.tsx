@@ -1,6 +1,8 @@
+import '../assets/scss/profile.css';
+
 function Profile(){
     return (
-        <div>
+        <div className="profile_container">
             this is pages profile
         </div>
     );
