@@ -1,0 +1,167 @@
+{
+  "categories": [
+    { "id": 1, "name": "Món nước", "image": "https://placehold.co/400x300?text=Mon+nuoc" },
+    { "id": 2, "name": "Món cơm", "image": "https://placehold.co/400x300?text=Mon+com" },
+    { "id": 3, "name": "Món nhanh", "image": "https://placehold.co/400x300?text=Mon+nhanh" },
+    { "id": 4, "name": "Đồ uống", "image": "https://placehold.co/400x300?text=Do+uong" }
+  ],
+  "meals": [
+    {
+      "id": 1,
+      "name": "Phở bò",
+      "description": "Nước dùng hầm xương 12 tiếng, thịt bò tái mềm, bánh phở dai.",
+      "price": 45000,
+      "image": "https://placehold.co/600x400?text=Pho+bo",
+      "category": "Món nước",
+      "rating": 4.8,
+      "isFeatured": true
+    },
+    {
+      "id": 2,
+      "name": "Bún bò Huế",
+      "description": "Nước dùng đậm vị sả và mắm ruốc, giò heo, chả cua, huyết.",
+      "price": 48000,
+      "image": "https://placehold.co/600x400?text=Bun+bo+Hue",
+      "category": "Món nước",
+      "rating": 4.7,
+      "isFeatured": true
+    },
+    {
+      "id": 3,
+      "name": "Hủ tiếu Nam Vang",
+      "description": "Nước lèo ngọt thanh từ xương heo, tôm, thịt bằm, gan, trứng cút.",
+      "price": 42000,
+      "image": "https://placehold.co/600x400?text=Hu+tieu",
+      "category": "Món nước",
+      "rating": 4.5,
+      "isFeatured": false
+    },
+    {
+      "id": 4,
+      "name": "Cơm tấm sườn",
+      "description": "Sườn nướng than, bì, chả trứng, nước mắm chua ngọt.",
+      "price": 40000,
+      "image": "https://placehold.co/600x400?text=Com+tam+suon",
+      "category": "Món cơm",
+      "rating": 4.8,
+      "isFeatured": true
+    },
+    {
+      "id": 5,
+      "name": "Cơm gà xối mỡ",
+      "description": "Gà chiên da giòn rụm, cơm chiên vàng, dưa leo, nước mắm gừng.",
+      "price": 42000,
+      "image": "https://placehold.co/600x400?text=Com+ga+xoi+mo",
+      "category": "Món cơm",
+      "rating": 4.6,
+      "isFeatured": true
+    },
+    {
+      "id": 6,
+      "name": "Cơm chiên dương châu",
+      "description": "Cơm chiên với tôm, lạp xưởng, trứng, đậu Hà Lan và cà rốt.",
+      "price": 38000,
+      "image": "https://placehold.co/600x400?text=Com+chien",
+      "category": "Món cơm",
+      "rating": 4.4,
+      "isFeatured": false
+    },
+    {
+      "id": 7,
+      "name": "Bánh mì thịt",
+      "description": "Bánh mì giòn, pate, thịt nguội, chả lụa, rau thơm, đồ chua.",
+      "price": 25000,
+      "image": "https://placehold.co/600x400?text=Banh+mi+thit",
+      "category": "Món nhanh",
+      "rating": 4.7,
+      "isFeatured": true
+    },
+    {
+      "id": 8,
+      "name": "Bánh mì ốp la",
+      "description": "Bánh mì nóng với trứng ốp la, pate, xúc xích, tương ớt.",
+      "price": 22000,
+      "image": "https://placehold.co/600x400?text=Banh+mi+op+la",
+      "category": "Món nhanh",
+      "rating": 4.3,
+      "isFeatured": false
+    },
+    {
+      "id": 9,
+      "name": "Gỏi cuốn tôm thịt",
+      "description": "4 cuốn gỏi tươi với tôm, thịt luộc, bún, rau sống, chấm tương đậu phộng.",
+      "price": 30000,
+      "image": "https://placehold.co/600x400?text=Goi+cuon",
+      "category": "Món nhanh",
+      "rating": 4.6,
+      "isFeatured": false
+    },
+    {
+      "id": 10,
+      "name": "Trà đào cam sả",
+      "description": "Trà đen ủ lạnh, đào miếng, cam tươi, sả thơm.",
+      "price": 29000,
+      "image": "https://placehold.co/600x400?text=Tra+dao+cam+sa",
+      "category": "Đồ uống",
+      "rating": 4.7,
+      "isFeatured": true
+    },
+    {
+      "id": 11,
+      "name": "Cà phê sữa đá",
+      "description": "Cà phê phin đậm vị pha sữa đặc, uống cùng đá viên.",
+      "price": 25000,
+      "image": "https://placehold.co/600x400?text=Ca+phe+sua+da",
+      "category": "Đồ uống",
+      "rating": 4.8,
+      "isFeatured": false
+    },
+    {
+      "id": 12,
+      "name": "Sinh tố bơ",
+      "description": "Bơ sáp xay mịn với sữa đặc và đá, béo ngậy.",
+      "price": 35000,
+      "image": "https://placehold.co/600x400?text=Sinh+to+bo",
+      "category": "Đồ uống",
+      "rating": 4.5,
+      "isFeatured": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Nguyễn Văn A",
+      "email": "user@example.com",
+      "password": "123456",
+      "phone": "0901234567",
+      "address": "12 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh",
+      "role": "customer"
+    },
+    {
+      "id": 2,
+      "fullName": "Quản trị viên",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "phone": "0909999999",
+      "address": "",
+      "role": "admin"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "customerName": "Nguyễn Văn A",
+      "phone": "0901234567",
+      "address": "12 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh",
+      "items": [
+        { "mealId": 1, "name": "Phở bò", "price": 45000, "quantity": 2 },
+        { "mealId": 10, "name": "Trà đào cam sả", "price": 29000, "quantity": 1 }
+      ],
+      "total": 119000,
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2026-11-13T09:30:00"
+    }
+  ]
+}
