@@ -7,42 +7,25 @@ type Meal = {
     price: number;
     image: string;
     category: string;
-};
-type ApiRecipe = {
-    id: number;
-    name: string;
-    instructions: string[];
-    image: string;
-    cuisine: string;
-};
-
-type ApiResponse = {
-    recipes: ApiRecipe[];
+    rating: number;
+    isFeatured: boolean;
 };
 
 export const fetchMeals = createAsyncThunk(
     "meals/fetchMeals",
     async () => {
-        const response = await fetch("https://dummyjson.com/recipes");
+        const response = await fetch("http://localhost:3001/meals");
 
         if (!response.ok) {
             throw new Error("Failed to fetch meals");
         }
 
-        const data: ApiResponse = await response.json();
+        const data: Meal[] = await response.json();
 
-        const meals: Meal[] = data.recipes.map((recipe) => ({
-            id: recipe.id,
-            name: recipe.name,
-            description: recipe.instructions.join(" "),
-            price: Math.floor(Math.random() * 40000) + 20000,
-            image: recipe.image,
-            category: recipe.cuisine
-        }));
-
-        return meals;
+        return data;
     }
 );
+
 
 const mealSlice = createSlice({
     name: "meals",
