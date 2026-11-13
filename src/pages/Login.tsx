@@ -1,4 +1,5 @@
 import '../assets/scss/login.css';
+import {Link} from "react-router-dom";
 
 export default function Login() {
    return (
@@ -12,9 +13,13 @@ export default function Login() {
                        <button>Đăng Nhập</button>
                        <div className="other_option">
                            <p>Quên mật khẩu?</p>
-                           <p>Đặt mật khẩu mới</p>
+                           <Link to="/ForgetPass">
+                               <p className="white_bg">Đặt mật khẩu mới</p>
+                           </Link>
                        </div>
-                       <p>Quay lại trang chủ</p>
+                       <Link to="/">
+                           <p className="white_bg">Quay lại trang chủ</p>
+                       </Link>
                    </div>
                </div>
                <div className="login_right">
@@ -23,7 +28,9 @@ export default function Login() {
                        <p>Hãy đăng nhập ngay và chọn món ăn phù hợp với nhu cầu của bạn, chúng tôi sẽ giao bữa trưa cho bạn đúng hẹn.</p>
                        <div className="other_option">
                            <p>Chưa có tài khoản?</p>
-                           <p>Đăng ký</p>
+                           <Link to="/Register">
+                               <p className="green_bg">Đăng ký</p>
+                           </Link>
                        </div>
                    </div>
                </div>

@@ -1,4 +1,5 @@
 import '../assets/scss/login.css';
+import {Link} from "react-router-dom";
 
 export default function Register() {
     return (
@@ -12,7 +13,9 @@ export default function Register() {
                         <input type="text" placeholder="Nhập mật khẩu"/>
                         <input type="text" placeholder="Xác nhận mật khẩu"/>
                         <button>Đăng ký</button>
-                        <p>Quay lại trang chủ</p>
+                        <Link to="/">
+                            <p className="white_bg">Quay lại trang chủ</p>
+                        </Link>
                     </div>
                 </div>
                 <div className="login_right">
@@ -22,7 +25,9 @@ export default function Register() {
                             ưu đãi dành cho thành viên mới!</p>
                         <div className="other_option">
                             <p>Đã có tài khoản?</p>
-                            <p>Đăng nhập</p>
+                            <Link to="/login">
+                                <p className="green_bg">Đăng nhập</p>
+                            </Link>
                         </div>
                     </div>
                 </div>
