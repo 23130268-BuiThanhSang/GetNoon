@@ -1,22 +1,61 @@
 import '../assets/scss/login.css';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import { useState} from "react";
 
 export default function Register() {
+    const [username, setUsername] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [message, setMessage] = useState('');
+    const [isError, setIsError] = useState(false);
+    const navigate = useNavigate();
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        if (!username || !phone ||!password || !confirmPassword) {
+            setMessage("Please fill all fields");
+            setIsError(true);
+            return;
+        }
+        if (password !== confirmPassword) {
+            setMessage("Passwords don't match");
+            setIsError(true);
+            return;
+        }
+        const users = JSON.parse(localStorage.getItem("fake_users")) || [];
+        const existingUsers = users.find(u => u.username === username);
+        if (existingUsers) {
+            setMessage("User already exist");
+            setIsError(true);
+            return;
+        }
+        users.push({ username, phone, password });
+        localStorage.setItem("fake_users", JSON.stringify(users));
+        setMessage("Register successfully");
+        setIsError(false);
+        setTimeout(() => {
+            navigate("/Login");
+        }, 1500)
+    }
     return (
         <div className="login_container">
             <div className="login_content">
                 <div className="login_left">
-                    <div className="left_content">
-                        <h2>Đăng ký</h2>
-                        <input type="text" placeholder="Nhập tên tài khoản"/>
-                        <input type="text" placeholder="Nhập số điện thoại"/>
-                        <input type="text" placeholder="Nhập mật khẩu"/>
-                        <input type="text" placeholder="Xác nhận mật khẩu"/>
-                        <button>Đăng ký</button>
-                        <Link to="/">
-                            <p className="white_bg">Quay lại trang chủ</p>
-                        </Link>
-                    </div>
+                    <form onSubmit={handleRegister}>
+                        <div className="left_content">
+                            <h2>Đăng ký</h2>
+                            <input type="text" placeholder="Nhập tên tài khoản" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                            <input type="text" placeholder="Nhập số điện thoại" value={phone} onChange={(e) => setPhone(e.target.value)}/>
+                            <input type="password" placeholder="Nhập mật khẩu" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                            <input type="password" placeholder="Xác nhận mật khẩu" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+                            {message && (<p className={`form_message ${isError? 'error' : 'success'}`}>{message}</p>)}
+                            <button>Đăng ký</button>
+                            <Link to="/">
+                                <p className="white_bg">Quay lại trang chủ</p>
+                            </Link>
+                        </div>
+                    </form>
                 </div>
                 <div className="login_right">
                     <div className="right_content">

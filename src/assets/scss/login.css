@@ -118,4 +118,17 @@ a {
   color: #54B840;
 }
 
+.form_message {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.form_message.success {
+  color: #54B840;
+}
+
+.form_message.error {
+  color: #FF5555;
+}
+
 /*# sourceMappingURL=login.css.map */
