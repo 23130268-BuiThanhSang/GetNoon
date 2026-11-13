@@ -15,7 +15,7 @@ export default function Login() {
         const users = JSON.parse(localStorage.getItem("fake_users")) || [];
         const validUser = users.find(u => u.username === username && u.password === password);
         if (validUser) {
-            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('isLogin', 'true');
             localStorage.setItem('currentUser', JSON.stringify(validUser));
             setMessage("Đăng nhập thành công");
             setIsError(false);

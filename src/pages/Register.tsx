@@ -14,12 +14,12 @@ export default function Register() {
     const handleRegister = (e) => {
         e.preventDefault();
         if (!username || !phone ||!password || !confirmPassword) {
-            setMessage("Please fill all fields");
+            setMessage("Vui lòng nhập đầy đủ thông tin!");
             setIsError(true);
             return;
         }
         if (password !== confirmPassword) {
-            setMessage("Passwords don't match");
+            setMessage("Mật khẩu xác nhận không khớp!");
             setIsError(true);
             return;
         }
