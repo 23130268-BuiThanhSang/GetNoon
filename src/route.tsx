@@ -9,6 +9,7 @@ import ForgetPass from "./pages/ForgetPass.tsx";
 import Policy from "./pages/Policy.tsx";
 import Cart from "./pages/Cart.tsx";
 import Profile from "./pages/Profile.tsx";
+import OrderHistory from "./pages/OrderHistory.tsx";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path:"profile",
                 element:<Profile/>
+            },
+            {
+                path: "orders",
+                element: <OrderHistory />
             }
         ],
     },

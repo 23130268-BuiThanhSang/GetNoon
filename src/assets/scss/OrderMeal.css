@@ -1,0 +1,57 @@
+.order-meal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px;
+  background-color: #fffbf5;
+  border: 1px solid #f1e7da;
+  border-radius: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.order-meal__image {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.order-meal__info {
+  flex: 1;
+  min-width: 0;
+}
+.order-meal__name {
+  margin: 0 0 8px;
+  color: #2d2013;
+  font-size: 16px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.order-meal__price {
+  margin: 0;
+  color: #166534;
+  font-size: 15px;
+  font-weight: 600;
+}
+.order-meal__quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 54px;
+  padding: 8px 10px;
+  background-color: #dcfce7;
+  border-radius: 10px;
+}
+.order-meal__quantity span {
+  color: #6b5b4b;
+  font-size: 11px;
+  font-weight: 500;
+}
+.order-meal__quantity strong {
+  margin-top: 2px;
+  color: #14532d;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=OrderMeal.css.map */
