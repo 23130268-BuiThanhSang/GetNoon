@@ -1,4 +1,121 @@
+@use "VariableGlobal" as *;
+
 .profile_container {
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_group{
+  display: flex;
+  width: 95%;
+  min-height: 550px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.left_profile {
+  flex: 1;
+  background-color: #FFD36A;
+  padding: 20px;
+}
+
+.right_profile {
+  flex: 3;
+  background-color: #FFF9E2;
+}
+
+.avatar_image {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.avt_profile {
+  display: flex;
+}
+
+.avt_profile h2{
+  margin-top: 43px;
+  margin-left: 10px;
+}
+
+.left_profile button{
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+    margin-top: 140px;
+    margin-left: 30px;
+}
+
+.left_profile button:hover{
+  background: $primaryColorLight;
+}
+
+.space{
+  margin-top: 25px;
+}
+
+.profile_option {
+  margin: 10px;
+  color: black;
+  font-size: 20px;
+  display: flex;
+}
+
+.profile_option p {
+  margin-left: 20px;
+}
+
+.profile_option i {
+  font-size: 30px;
+  margin-top: 2px;
+  margin-left: 20px;
+}
+
+.profile_option.active{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.right_profile{
+  padding: 20px;
+}
+
+.right_profile p{
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+.profile_title {
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+.space_profile {
+  margin-top: 25px;
+}
+
+.update_group {
+  display: flex;
+}
+
+.update_group button {
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 3px;
+  background-color: #FFD36A;
+  color: black;
+  border: none;
+}
+
+.update_group button:hover{
+  background-color: #FFEA8A;
 }
