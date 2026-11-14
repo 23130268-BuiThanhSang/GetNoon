@@ -81,4 +81,41 @@
   font-size: 22px;
 }
 
+.right_profile {
+  padding: 20px;
+}
+
+.right_profile p {
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+.profile_title {
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+.space_profile {
+  margin-top: 25px;
+}
+
+.update_group {
+  display: flex;
+}
+
+.update_group button {
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 3px;
+  background-color: #FFD36A;
+  color: black;
+  border: none;
+}
+
+.update_group button:hover {
+  background-color: #FFEA8A;
+}
+
 /*# sourceMappingURL=profile.css.map */

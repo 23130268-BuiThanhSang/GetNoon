@@ -10,6 +10,12 @@ function Profile(){
         return storedUser ? JSON.parse(storedUser) : null;
     });
 
+    const handleLogout = () => {
+        localStorage.removeItem('isLogin');
+        localStorage.removeItem('currentUser');
+        window.location.href = '/';
+    }
+
     return (
         <div className="profile_container">
             <div className="profile_group">
@@ -31,9 +37,47 @@ function Profile(){
                         <i className="fa-solid fa-truck-fast"></i>
                         <p>Lịch sử mua hàng</p>
                     </div>
-                    <button> Đăng xuất</button>
+                    <button onClick={handleLogout}> Đăng xuất</button>
                 </div>
-                <div className="right_profile"></div>
+                <div className="right_profile">
+                    {activeTab === 'info' && (
+                        <div>
+                            <h2 className="profile_title">Thông tin tài khoản</h2>
+                            <p>Quản lý thông tin tài khoản cá nhân</p>
+                            <div className="space_profile"></div>
+                            <p>Tên tài khoản: {currentUser.username}</p>
+                            <p>Số điện thoại: ••••••••••</p>
+                            <p>Mật khẩu: ••••••••</p>
+                        </div>
+                    )}
+
+                    {activeTab === 'update' && (
+                        <div>
+                            <h2 className="profile_title">Cập nhật thông tin</h2>
+                            <p>Thay đổi hồ sơ tài khoản</p>
+                            <div className="space_profile"></div>
+                            <div className="update_group">
+                                <p>Tên tài khoản: {currentUser.username}</p>
+                                <button>Cập nhật</button>
+                            </div>
+                            <div className="update_group">
+                                <p>Số điện thoại: ••••••••••</p>
+                                <button>Cập nhật</button>
+                            </div>
+                            <div className="update_group">
+                                <p>Mật khẩu: ••••••••</p>
+                                <button>Cập nhật</button>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'history' && (
+                        <div>
+                            <h2 className="profile_title">Lịch sử mua hàng</h2>
+                            <p>Quản lý trạng thái đơn hàng đã đặt</p>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );
