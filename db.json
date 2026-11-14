@@ -1,9 +1,9 @@
 {
   "categories": [
-    { "id": 1, "name": "Món nước", "image": "https://placehold.co/400x300?text=Mon+nuoc" },
-    { "id": 2, "name": "Món cơm", "image": "https://placehold.co/400x300?text=Mon+com" },
-    { "id": 3, "name": "Món nhanh", "image": "https://placehold.co/400x300?text=Mon+nhanh" },
-    { "id": 4, "name": "Đồ uống", "image": "https://placehold.co/400x300?text=Do+uong" }
+    { "id": 1, "name": "Món nước", "image": "https://th.bing.com/th/id/OIP._AUGtg62zlZ7q6olKBlH_AHaEK?w=307&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" },
+    { "id": 2, "name": "Món cơm", "image": "https://th.bing.com/th/id/R.2752976841dd4055c6af578665c4440f?rik=jMn5ss1EIklzkg&pid=ImgRaw&r=0" },
+    { "id": 3, "name": "Món nhanh", "image": "https://th.bing.com/th/id/R.669446905f5cba2f22463c2bb9194d7f?rik=Hqd549yPoRc8qg&pid=ImgRaw&r=0" },
+    { "id": 4, "name": "Đồ uống", "image": "https://i.ebayimg.com/images/g/2owAAOSwcnJcE1rG/s-l1600.jpg" }
   ],
   "meals": [
     {
