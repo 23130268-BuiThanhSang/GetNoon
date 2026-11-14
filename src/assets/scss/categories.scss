@@ -1,4 +1,9 @@
 @use "VariableGlobal" as *;
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
 .category-item {
   position: relative;
   height: 160px;
