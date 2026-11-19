@@ -2,7 +2,7 @@ import '../assets/scss/profile.css';
 import defaultAvatar from "../assets/Images/defaultavatar.jpg";
 import { useState} from "react";
 import '../assets/Library/fontawesome/all.min.css';
-
+import OrderHistory from "./OrderHistory";
 function Profile(){
     const [activeTab, setActiveTab] = useState('info');
     const [currentUser] = useState(() => {
@@ -73,8 +73,9 @@ function Profile(){
 
                     {activeTab === 'history' && (
                         <div>
-                            <h2 className="profile_title">Lịch sử mua hàng</h2>
-                            <p>Quản lý trạng thái đơn hàng đã đặt</p>
+                            <div className="profile_history">
+                                <OrderHistory />
+                            </div>
                         </div>
                     )}
                 </div>
