@@ -118,4 +118,11 @@
   background-color: #FFEA8A;
 }
 
+.profile_history {
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+
 /*# sourceMappingURL=profile.css.map */
