@@ -163,5 +163,22 @@
       "status": "pending",
       "createdAt": "2026-11-13T09:30:00"
     }
+  ],
+  "policies": [
+    {
+      "id": 1,
+      "title": "Chính sách đặt cơm & giao hàng",
+      "content": "Đơn hàng đặt trước 10h30 sẽ được giao đúng khung giờ trưa trong khu vực hỗ trợ của GetNoon."
+    },
+    {
+      "id": 2,
+      "title": "Chính sách đổi trả & hoàn tiền",
+      "content": "Nếu món ăn giao nhầm, thiếu món hoặc hư hỏng do vận chuyển, vui lòng liên hệ hỗ trợ ngay khi nhận hàng để được xử lý."
+    },
+    {
+      "id": 3,
+      "title": "Chính sách bảo mật thông tin",
+      "content": "Thông tin tài khoản, số điện thoại và địa chỉ giao hàng chỉ phục vụ cho việc xử lý đơn hàng và chăm sóc khách hàng."
+    }
   ]
 }
