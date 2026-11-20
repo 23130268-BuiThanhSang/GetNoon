@@ -1,4 +1,4 @@
-import {useAppSelector} from "../redux/hooks.tsx";
+import {useAppSelector} from "../redux/Hooks/hooks.tsx";
 import {Link} from "react-router-dom";
 
 function Meals() {

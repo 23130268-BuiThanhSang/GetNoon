@@ -1,6 +1,6 @@
 import {RouterProvider} from "react-router-dom";
 import router from "./route.tsx";
-import {useAppDispatch} from "./redux/hooks.tsx";
+import {useAppDispatch} from "./redux/Hooks/hooks.tsx";
 import {useEffect} from "react";
 import useAPI from "./redux/Hooks/useAPI.tsx";
 import {setMeals} from "./redux/slices/mealSlice.tsx";
