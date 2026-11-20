@@ -1,5 +1,5 @@
 import {Link, useParams} from "react-router-dom";
-import {useAppSelector} from "../redux/hooks.tsx";
+import {useAppSelector} from "../redux/Hooks/hooks.tsx";
 
 function MealDetail() {
     const { id } = useParams();

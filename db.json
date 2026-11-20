@@ -5,6 +5,12 @@
     { "id": 3, "name": "Món nhanh", "image": "https://th.bing.com/th/id/R.669446905f5cba2f22463c2bb9194d7f?rik=Hqd549yPoRc8qg&pid=ImgRaw&r=0" },
     { "id": 4, "name": "Đồ uống", "image": "https://i.ebayimg.com/images/g/2owAAOSwcnJcE1rG/s-l1600.jpg" }
   ],
+  "whyUs": [
+    { "id": 1, "icon": "fa-leaf", "title": "Nguyên liệu tươi sạch", "text": "Nhập mới mỗi ngày từ nguồn uy tín, không dùng chất bảo quản." },
+    { "id": 2, "icon": "fa-bolt", "title": "Giao hàng nhanh", "text": "Món nóng hổi đến tay bạn trong vòng 30 phút." },
+    { "id": 3, "icon": "fa-wallet", "title": "Giá cả hợp lý", "text": "Món ngon từ 22.000đ, thanh toán COD hoặc online đều được." },
+    { "id": 4, "icon": "fa-headset", "title": "Hỗ trợ tận tâm", "text": "Đội ngũ hỗ trợ luôn sẵn sàng giải đáp và đổi trả khi cần." }
+  ],
   "meals": [
     {
       "id": 1,
