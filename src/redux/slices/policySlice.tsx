@@ -1,5 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
-import db from "../../../db.json";
+import { createSlice} from "@reduxjs/toolkit";
 
 export type Policy = {
     id: number;
@@ -8,9 +7,9 @@ export type Policy = {
 };
 
 const policySlice = createSlice({
-    name: "policies",
+    name: "policy",
     initialState: {
-        items: db.policies as Policy[],
+        items: [] as Policy[],
     },
     reducers: {},
 });

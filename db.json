@@ -167,18 +167,38 @@
   "policies": [
     {
       "id": 1,
-      "title": "Chính sách đặt cơm & giao hàng",
-      "content": "Đơn hàng đặt trước 10h30 sẽ được giao đúng khung giờ trưa trong khu vực hỗ trợ của GetNoon."
+      "title": "1. Thời gian đặt món & chốt đơn buổi trưa",
+      "content": "Thực đơn trưa mở đặt trước 10h30 mỗi ngày để bếp chuẩn bị nguyên liệu tươi mới và sắp xếp tuyến giao kịp giờ nghỉ trưa. Các đơn đặt sau khung giờ này có thể được chuyển sang ngày hôm sau hoặc áp dụng danh sách món có sẵn tùy thời điểm."
     },
     {
       "id": 2,
-      "title": "Chính sách đổi trả & hoàn tiền",
-      "content": "Nếu món ăn giao nhầm, thiếu món hoặc hư hỏng do vận chuyển, vui lòng liên hệ hỗ trợ ngay khi nhận hàng để được xử lý."
+      "title": "2. Giao hàng & nhận món tại văn phòng",
+      "content": "Đơn hàng được giao trong khung giờ trưa (thường từ 11h15 đến 12h45) theo địa chỉ, tòa nhà hoặc ghi chú nhận hàng bạn đã cung cấp. Vui lòng giữ điện thoại liên lạc trong khung giờ giao; trường hợp giao tại sảnh/tòa nhà, bạn nên ghi rõ tên công ty, tầng hoặc điểm hẹn để tài xế giao nhanh và chính xác."
     },
     {
       "id": 3,
-      "title": "Chính sách bảo mật thông tin",
-      "content": "Thông tin tài khoản, số điện thoại và địa chỉ giao hàng chỉ phục vụ cho việc xử lý đơn hàng và chăm sóc khách hàng."
+      "title": "3. Hủy đơn & thay đổi thông tin giao hàng",
+      "content": "Bạn có thể chỉnh sửa ghi chú, địa chỉ hoặc hủy đơn trước thời điểm chốt bếp / trước khi đơn chuyển sang trạng thái đang chuẩn bị hoặc đang giao. Khi món ăn đã được chế biến hoặc tài xế đang trên đường giao, việc hủy hoặc đổi món có thể không được hỗ trợ hoặc phát sinh chi phí chuẩn bị."
+    },
+    {
+      "id": 4,
+      "title": "4. Kiểm tra món ăn, đổi trả & hoàn tiền",
+      "content": "Quý khách vui lòng kiểm tra số lượng món, phần ăn và tình trạng hộp đựng ngay khi nhận hàng. Nếu xảy ra nhầm món, thiếu món, đổ vỡ hoặc chất lượng không đảm bảo do quá trình chuẩn bị/vận chuyển, hãy liên hệ bộ phận hỗ trợ kèm hình ảnh thực tế sớm nhất để GetNoon đổi món mới hoặc hoàn tiền theo từng trường hợp."
+    },
+    {
+      "id": 5,
+      "title": "5. Thanh toán & hóa đơn / lịch sử đơn hàng",
+      "content": "GetNoon hỗ trợ các hình thức thanh toán hiển thị tại bước đặt hàng (như thanh toán khi nhận hàng COD hoặc thanh toán trực tuyến tùy cấu hình). Toàn bộ thông tin món đã đặt, tổng tiền và trạng thái xử lý được lưu trong mục Lịch sử đơn hàng để bạn tiện theo dõi và đối soát."
+    },
+    {
+      "id": 6,
+      "title": "6. An toàn thực phẩm & lưu ý dị ứng",
+      "content": "Nguyên liệu và suất ăn được lựa chọn, sơ chế và đóng gói hướng đến sự sạch sẽ, phù hợp khẩu vị bữa trưa hằng ngày. Nếu bạn có nhu cầu ăn kiêng, ít cay/ít đường hoặc dị ứng với thành phần cụ thể (như hải sản, đậu phộng, trứng, sữa...), vui lòng đọc kỹ mô tả món và ghi chú rõ trước khi đặt."
+    },
+    {
+      "id": 7,
+      "title": "7. Bảo mật thông tin cá nhân",
+      "content": "Thông tin tài khoản, tên người nhận, số điện thoại và địa chỉ giao hàng của bạn chỉ được sử dụng để xác nhận đơn, điều phối giao hàng, hỗ trợ khiếu nại và cải thiện trải nghiệm trên GetNoon. Chúng tôi không chia sẻ trái phép thông tin cá nhân cho bên thứ ba ngoài phạm vi phục vụ đơn hàng."
     }
   ]
 }

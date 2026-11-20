@@ -5,7 +5,6 @@ import {useEffect} from "react";
 import useAPI from "./redux/Hooks/useAPI.tsx";
 import {setMeals} from "./redux/slices/mealSlice.tsx";
 
-
 export default function App() {
     const dispatch = useAppDispatch();
     const { data, loading, error } = useAPI("http://localhost:3001/meals");
@@ -15,6 +14,7 @@ export default function App() {
             dispatch(setMeals(data));
         }
     }, [data, dispatch]);
+
 
     if (loading) {
         return <h1>Loading meals...</h1>;
