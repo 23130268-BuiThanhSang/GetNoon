@@ -1,9 +1,9 @@
 {
   "categories": [
-    { "id": 1, "name": "Món nước", "image": "https://th.bing.com/th/id/OIP._AUGtg62zlZ7q6olKBlH_AHaEK?w=307&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" },
-    { "id": 2, "name": "Món cơm", "image": "https://th.bing.com/th/id/R.2752976841dd4055c6af578665c4440f?rik=jMn5ss1EIklzkg&pid=ImgRaw&r=0" },
-    { "id": 3, "name": "Món nhanh", "image": "https://th.bing.com/th/id/R.669446905f5cba2f22463c2bb9194d7f?rik=Hqd549yPoRc8qg&pid=ImgRaw&r=0" },
-    { "id": 4, "name": "Đồ uống", "image": "https://i.ebayimg.com/images/g/2owAAOSwcnJcE1rG/s-l1600.jpg" }
+    { "id": 1, "name": "Món nước", "image": "https://sohanews.sohacdn.com/160588918557773824/2026/11/12/e268f5a51186447184d3e82a717a322d-1794496346760830756345.jpg" },
+    { "id": 2, "name": "Món cơm", "image": "https://grooviet.com/wp-content/uploads/2025/10/img_3af9dfecb8252f58c114ff7e4fe7302ddr.webp" },
+    { "id": 3, "name": "Món nhanh", "image": "https://i.ytimg.com/vi/VKIpiGdDvns/maxresdefault.jpg" },
+    { "id": 4, "name": "Đồ uống", "image": "https://th.bing.com/th/id/R.fc51f9d712b2f7f3e1e4ebf492fbeefd?rik=BLHgFJZGkHj6PQ&pid=ImgRaw&r=0" }
   ],
   "whyUs": [
     { "id": 1, "icon": "fa-leaf", "title": "Nguyên liệu tươi sạch", "text": "Nhập mới mỗi ngày từ nguồn uy tín, không dùng chất bảo quản." },

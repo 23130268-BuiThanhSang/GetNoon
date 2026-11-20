@@ -4,11 +4,13 @@ import cartReducer from "./slices/cartSlice";
 import orderReducer from "./slices/orderSlice";
 import categoryReducer from "./slices/CategoriesSlice.tsx";
 import policyReducer from "./slices/policySlice";
+import whyUsReducer from "./slices/WhyUsSlice.tsx";
 
 export const store = configureStore({
     reducer: {
         meals: mealReducer,
         categories: categoryReducer,
+        whyUs: whyUsReducer,
         cart: cartReducer,
         orders: orderReducer,
         policy: policyReducer,
