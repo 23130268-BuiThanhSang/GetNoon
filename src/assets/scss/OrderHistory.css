@@ -13,7 +13,7 @@
 .order-history__empty {
   padding: 48px 20px;
   text-align: center;
-  background-color: #fffbf5;
+  background-color: white;
   border: 1px solid #f1e7da;
   border-radius: 16px;
 }
@@ -28,7 +28,7 @@
 .order-history__order {
   margin-bottom: 24px;
   padding: 20px;
-  background-color: #fffbf5;
+  background-color: white;
   border: 1px solid #f1e7da;
   border-radius: 16px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;

@@ -106,6 +106,10 @@ function Cart() {
                 ))}
             </div>
             <div className="cart__footer">
+                <span className="cart__selected">
+                    Selected: {cartItems.filter((item) => item.selected).length}
+                </span>
+
                 <button className="cart__checkout">
                     Proceed to Checkout
                 </button>
