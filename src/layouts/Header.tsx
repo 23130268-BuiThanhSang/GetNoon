@@ -23,6 +23,7 @@ export function Header() {
 
             <nav className="navigation_menu">
                 <Link to="/meals" className="button_product_list">Món Ăn</Link>
+                <Link to= "/about" className="button_about">Giới thiệu</Link>
                 <Link to="/policy" className="button_policy">Chính Sách</Link>
             </nav>
             <nav className="navigation_profile">

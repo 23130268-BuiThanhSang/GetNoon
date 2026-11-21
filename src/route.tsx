@@ -10,6 +10,7 @@ import Policies from "./pages/Policies.tsx";
 import Cart from "./pages/Cart.tsx";
 import Profile from "./pages/Profile.tsx";
 import OrderHistory from "./pages/OrderHistory.tsx";
+import About from "./pages/About.tsx";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: "orders",
                 element: <OrderHistory />
+            },
+            {
+                path: "about",
+                element: <About />
             }
         ],
     },

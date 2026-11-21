@@ -6,8 +6,8 @@ function Policies(){
     const { data, loading, error } = useAPI("http://localhost:3001/policies");
     const policy = (data as Policy[]) || [];
 
-    if (loading) return <p>Loading policies...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if (loading) return <p>Đang tải chính sách...</p>;
+    if (error) return <p>Lỗi tải trang: {error.message}</p>;
 
     return (
         <div className="policy_body">

@@ -1,0 +1,51 @@
+.about_body {
+  width: 100%;
+  min-height: 600px;
+  padding: 40px 20px 60px;
+}
+
+.about_container {
+  line-height: 1;
+  margin-left: 37px;
+}
+
+.about_container h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 auto 28px;
+  color: #166534;
+  text-align: center;
+}
+
+.about_container h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+.about_images {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.about_images img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.about_content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.image_caption {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 7px;
+}
+
+/*# sourceMappingURL=about.css.map */
