@@ -206,5 +206,20 @@
       "title": "7. Bảo mật thông tin cá nhân",
       "content": "Thông tin tài khoản, tên người nhận, số điện thoại và địa chỉ giao hàng của bạn chỉ được sử dụng để xác nhận đơn, điều phối giao hàng, hỗ trợ khiếu nại và cải thiện trải nghiệm trên GetNoon. Chúng tôi không chia sẻ trái phép thông tin cá nhân cho bên thứ ba ngoài phạm vi phục vụ đơn hàng."
     }
-  ]
+  ],
+  "about": {
+    "title": "Giới thiệu",
+    "subtitle": "GetNoon - Cơm Văn Phòng Nóng Hổi & Tiện Lợi",
+    "describe": [
+      "GetNoon thành lập với mong muốn mang đến những bữa cơm trưa ngon miệng, đảm bảo vệ sinh và giao đúng giờ cho dân văn phòng và sinh viên bận rộn.",
+      "Thực đơn đa dạng, phong phú với đầy đủ món mặn, món xào, canh nóng và rau xanh giúp bạn dễ dàng chọn món hợp khẩu vị.",
+      "Chỉ với vài thao tác đặt món trực tuyến, bữa trưa của bạn sẽ được chuẩn bị từ nguyên liệu tươi mỗi sáng và giao đúng khung giờ nghỉ trưa."
+    ],
+    "images": [
+      "https://comvanphongnhabull.com/wp-content/uploads/2023/10/1-22.png",
+      "https://comvanphongnhabull.com/wp-content/uploads/2023/10/fillet-ca-basa-chien-sa-ot-ivivu.jpg",
+      "https://comvanphongnhabull.com/wp-content/uploads/2023/10/thit-kho-tau-1.jpg",
+      "https://comvanphongnhabull.com/wp-content/uploads/2023/10/310477379-w500-1571026056-1770-1571026093.jpg"
+    ]
+  }
 }
