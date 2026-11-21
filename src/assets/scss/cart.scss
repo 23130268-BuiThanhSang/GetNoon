@@ -1,0 +1,130 @@
+@use "VariableGlobal" as *;
+
+.cart {
+  width: 100%;
+  padding: 24px;
+  color: $textColor;
+
+  &__title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  &__empty {
+    padding: 40px 20px;
+    text-align: center;
+    color: $textColorMuted;
+    background: $backgroundColor;
+    border: 1px solid $borderColor;
+    border-radius: 12px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid $borderColor;
+  }
+
+  &__checkout {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    background: $primaryColor;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: $primaryColorDark;
+    }
+  }
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  background: $backgroundColor;
+  border: 1px solid $borderColor;
+  border-radius: 12px;
+
+  &__checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: $primaryColor;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
+
+  &__price {
+    margin: 0;
+    color: $textColorMuted;
+    font-weight: 600;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    button {
+      width: 32px;
+      height: 32px;
+      border: 1px solid $borderColor;
+      border-radius: 6px;
+      background: $backgroundColorSoft;
+      color: $primaryColor;
+      font-size: 20px;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    }
+
+    span {
+      min-width: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  &__remove {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: $dangerColor;
+    color: white;
+    cursor: pointer;
+  }
+
+}
