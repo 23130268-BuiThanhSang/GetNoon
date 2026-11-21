@@ -6,7 +6,7 @@ import MealDetail from "./components/MealsDetail.tsx";
 import Login from "./pages/Login.tsx";
 import Register from "./pages/Register.tsx";
 import ForgetPass from "./pages/ForgetPass.tsx";
-import Policy from "./pages/Policy.tsx";
+import Policies from "./pages/Policies.tsx";
 import Cart from "./pages/Cart.tsx";
 import Profile from "./pages/Profile.tsx";
 import OrderHistory from "./pages/OrderHistory.tsx";
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             },
             {
             path:"policy",
-            element:<Policy/>
+            element:<Policies/>
             },
             {
                 path: "meals",

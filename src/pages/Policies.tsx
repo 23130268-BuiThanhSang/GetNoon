@@ -2,7 +2,7 @@ import type { Policy } from "../redux/slices/policySlice.tsx";
 import '../assets/scss/policy.css';
 import useAPI from "../redux/Hooks/useAPI.tsx";
 
-function Policy(){
+function Policies(){
     const { data, loading, error } = useAPI("http://localhost:3001/policies");
     const policy = (data as Policy[]) || [];
 
@@ -24,4 +24,4 @@ function Policy(){
     );
 }
 
-export default Policy;
+export default Policies;
