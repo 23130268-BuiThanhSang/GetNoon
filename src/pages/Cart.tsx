@@ -2,13 +2,29 @@ import { useAppDispatch, useAppSelector } from "../redux/Hooks/hooks";
 import {
     toggleSelection,
     updateQuantity,
-    removeFromCart
+    removeFromCart, addToCart
 } from "../redux/slices/cartSlice";
 import '../assets/scss/cart.css';
+import {useEffect} from "react";
 
 function Cart() {
+
     const dispatch = useAppDispatch();
     const cartItems = useAppSelector((state) => state.cart.items);
+
+    //////////////////////////
+    const testMeal = useAppSelector((state) => state.meals.items[1]);
+    useEffect(() => {
+        if (testMeal) {
+            dispatch(addToCart({
+                cartItemId: crypto.randomUUID(),
+                meal: testMeal,
+                quantity: 2,
+                selected: false
+            }));
+        }
+    }, [testMeal, dispatch]);
+    //////////////////////
 
     if (cartItems.length === 0) {
         return (
@@ -88,6 +104,11 @@ function Cart() {
                         </button>
                     </div>
                 ))}
+            </div>
+            <div className="cart__footer">
+                <button className="cart__checkout">
+                    Proceed to Checkout
+                </button>
             </div>
         </div>
     );
