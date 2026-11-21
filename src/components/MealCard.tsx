@@ -20,7 +20,10 @@ function MealCard({meal}: MealCardProps){
                     {meal.rating.toFixed(1)}
                 </span>
                 <span className="meal-card_price">{meal.price.toLocaleString("vi-VN")}VNĐ</span>
-                <button className="meal-card_btn">Thêm vào giỏ</button>
+                <button className="meal-card-btn">
+                    <i className="fa-solid fa-cart-plus"></i>
+                    Thêm vào giỏ
+                </button>
             </div>
         </div>
 

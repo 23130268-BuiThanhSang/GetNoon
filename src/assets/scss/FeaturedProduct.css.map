@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["FeaturedProduct.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA","file":"FeaturedProduct.css"}
+{"version":3,"sourceRoot":"","sources":["FeaturedProduct.scss","VariableGlobal.scss"],"names":[],"mappings":"AAEA;EAEE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA,OCjBa;;ADmBb;EACE;EACA;EACA;EACA;EACA;EACA;EACA,YCpBU;;;ADwBd;EACE;EACA;EACA,OCjBc;;;ADoBhB;EACE;EACA;EACA;EACA,OClCY;EDmCZ;EACA;EACA;;AAEA;EACE;;AAGF;EACE,OC1Cc;;AD4Cd;EACE;;;AAKN;EACE;EACA;EACA","file":"FeaturedProduct.css"}
