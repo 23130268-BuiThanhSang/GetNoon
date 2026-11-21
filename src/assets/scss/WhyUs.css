@@ -50,7 +50,6 @@
 .whyUs-section .whyUs-item:hover i {
   color: #fff;
   background: linear-gradient(135deg, #f1904d, #ea580c);
-  transform: scale(1.1) rotate(-6deg);
 }
 
 /*# sourceMappingURL=WhyUs.css.map */
