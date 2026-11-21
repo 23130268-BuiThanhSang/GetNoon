@@ -1,10 +1,13 @@
 import useAPI from "../redux/Hooks/useAPI.tsx";
 import type { AboutData } from "../redux/slices/aboutSlice.tsx";
 import "../assets/scss/about.css";
+import {Link} from "react-router-dom";
+import {useAppSelector} from "../redux/Hooks/hooks.tsx";
 
 function About() {
     const { data, loading, error } = useAPI("http://localhost:3001/about");
     const about = data as AboutData | null;
+    const meals = useAppSelector((state) => state.meals.items);
 
     if (loading) return <p>Đang tải giới thiệu...</p>;
     if (error) return <p>Lỗi tải trang: {error.message}</p>;
@@ -21,10 +24,18 @@ function About() {
                         <p key={index}>{text}</p>
                     ))}
                 </div>
-
+                <h3 className="about_subtitle">{about.list}</h3>
                 <div className="about_images">
-                    {about.images.map((imgUrl, index) => (
-                        <img key={index} src={imgUrl} alt={`${about.title} ${index + 1}`} />
+                    {meals.map((meal) => (
+                        <Link
+                            key={meal.id}
+                            to={`/meals/${meal.id}`}
+                            className="about_image_item"
+                        >
+                            <img src={meal.image} alt={meal.name} />
+
+                            <div className="image_caption">{meal.name}</div>
+                        </Link>
                     ))}
                 </div>
             </div>

@@ -4,7 +4,7 @@ export type AboutData = {
     title: string;
     subtitle: string;
     describe: string[];
-    images: string[];
+    list: string;
 };
 
 const aboutSlice = createSlice({
