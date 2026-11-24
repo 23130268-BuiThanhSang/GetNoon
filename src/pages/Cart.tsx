@@ -6,16 +6,14 @@ import {
 } from "../redux/slices/cartSlice";
 import '../assets/scss/cart.css';
 import {useEffect} from "react";
+import CartItemSummary from "../components/CartItemSummary.tsx";
 
 function Cart() {
 
     const dispatch = useAppDispatch();
     const cartItems = useAppSelector((state) => state.cart.items);
     const selectedItems = cartItems.filter((item) => item.selected);
-    const totalPrice = selectedItems.reduce(
-        (total, item) => total + item.meal.price * item.quantity,
-        0
-    );
+
     //////////////////////////
     const testMeal = useAppSelector((state) => state.meals.items[1]);
     useEffect(() => {
@@ -117,36 +115,7 @@ function Cart() {
             </div>
             <div className="cart__summary">
                 <h2>Tóm tắt đơn hàng</h2>
-
-                {selectedItems.length === 0 ? (
-                    <p>No items selected.</p>
-                ) : (
-                    <div className="cart__summary-list">
-                        {selectedItems.map((item) => (
-                            <div className="cart__summary-item" key={item.cartItemId}>
-                                <img
-                                    className="cart__summary-image"
-                                    src={item.meal.image}
-                                    alt={item.meal.name}
-                                />
-
-                                <div className="cart__summary-info">
-                                    <h4>{item.meal.name}</h4>
-                                    <span>Số phần: {item.quantity}</span>
-                                    <strong>
-                                        {(item.meal.price * item.quantity).toLocaleString("vi-VN")} VND
-                                    </strong>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
-
-                <div className="cart__summary-total">
-                    <span>Tổng tiền</span>
-                    <strong>{totalPrice.toLocaleString("vi-VN")} VND</strong>
-                </div>
-
+                <CartItemSummary/>
                 <button
                     className="cart__checkout"
                     disabled={selectedItems.length === 0}
