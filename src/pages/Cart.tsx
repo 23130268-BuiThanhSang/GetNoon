@@ -11,7 +11,11 @@ function Cart() {
 
     const dispatch = useAppDispatch();
     const cartItems = useAppSelector((state) => state.cart.items);
-
+    const selectedItems = cartItems.filter((item) => item.selected);
+    const totalPrice = selectedItems.reduce(
+        (total, item) => total + item.meal.price * item.quantity,
+        0
+    );
     //////////////////////////
     const testMeal = useAppSelector((state) => state.meals.items[1]);
     useEffect(() => {
@@ -20,7 +24,7 @@ function Cart() {
                 cartItemId: crypto.randomUUID(),
                 meal: testMeal,
                 quantity: 2,
-                selected: false
+                selected: true
             }));
         }
     }, [testMeal, dispatch]);
@@ -29,7 +33,10 @@ function Cart() {
     if (cartItems.length === 0) {
         return (
             <div className="cart">
-                <h1 className="cart__title">Shopping Cart</h1>
+                <br/>
+                <div className= "titlebox">
+                    <h1 className="cart__title">Giỏ Hàng</h1>
+                </div>
                 <p className="cart__empty">Your cart is empty.</p>
             </div>
         );
@@ -37,8 +44,11 @@ function Cart() {
 
     return (
         <div className="cart">
-            <h1 className="cart__title">Shopping Cart</h1>
-
+            <br/>
+            <div className= "titlebox">
+            <h1 className="cart__title">Giỏ Hàng</h1>
+            </div>
+        <div className="cart__content">
             <div className="cart__items">
                 {cartItems.map((item) => (
                     <div className="cart-item" key={item.cartItemId}>
@@ -105,15 +115,46 @@ function Cart() {
                     </div>
                 ))}
             </div>
-            <div className="cart__footer">
-                <span className="cart__selected">
-                    Selected: {cartItems.filter((item) => item.selected).length}
-                </span>
+            <div className="cart__summary">
+                <h2>Tóm tắt đơn hàng</h2>
 
-                <button className="cart__checkout">
-                    Proceed to Checkout
+                {selectedItems.length === 0 ? (
+                    <p>No items selected.</p>
+                ) : (
+                    <div className="cart__summary-list">
+                        {selectedItems.map((item) => (
+                            <div className="cart__summary-item" key={item.cartItemId}>
+                                <img
+                                    className="cart__summary-image"
+                                    src={item.meal.image}
+                                    alt={item.meal.name}
+                                />
+
+                                <div className="cart__summary-info">
+                                    <h4>{item.meal.name}</h4>
+                                    <span>Số phần: {item.quantity}</span>
+                                    <strong>
+                                        {(item.meal.price * item.quantity).toLocaleString("vi-VN")} VND
+                                    </strong>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                <div className="cart__summary-total">
+                    <span>Tổng tiền</span>
+                    <strong>{totalPrice.toLocaleString("vi-VN")} VND</strong>
+                </div>
+
+                <button
+                    className="cart__checkout"
+                    disabled={selectedItems.length === 0}
+                >
+                    Tiến hành thanh toán
                 </button>
             </div>
+        </div>
         </div>
     );
 }
