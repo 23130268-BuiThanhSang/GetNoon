@@ -7,12 +7,14 @@ import {
 import '../assets/scss/cart.css';
 import {useEffect} from "react";
 import CartItemSummary from "../components/CartItemSummary.tsx";
+import {useNavigate} from "react-router-dom";
 
 function Cart() {
 
     const dispatch = useAppDispatch();
     const cartItems = useAppSelector((state) => state.cart.items);
     const selectedItems = cartItems.filter((item) => item.selected);
+    const navigate = useNavigate();
 
     //////////////////////////
     const testMeal = useAppSelector((state) => state.meals.items[1]);
@@ -117,8 +119,10 @@ function Cart() {
                 <h2>Tóm tắt đơn hàng</h2>
                 <CartItemSummary/>
                 <button
+
                     className="cart__checkout"
                     disabled={selectedItems.length === 0}
+                    onClick={() => navigate('/checkout')}
                 >
                     Tiến hành thanh toán
                 </button>
