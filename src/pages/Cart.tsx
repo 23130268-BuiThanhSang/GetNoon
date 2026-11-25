@@ -6,11 +6,13 @@ import {
 } from "../redux/slices/cartSlice";
 import '../assets/scss/cart.css';
 import {useEffect} from "react";
+import CartItemSummary from "../components/CartItemSummary.tsx";
 
 function Cart() {
 
     const dispatch = useAppDispatch();
     const cartItems = useAppSelector((state) => state.cart.items);
+    const selectedItems = cartItems.filter((item) => item.selected);
 
     //////////////////////////
     const testMeal = useAppSelector((state) => state.meals.items[1]);
@@ -20,7 +22,7 @@ function Cart() {
                 cartItemId: crypto.randomUUID(),
                 meal: testMeal,
                 quantity: 2,
-                selected: false
+                selected: true
             }));
         }
     }, [testMeal, dispatch]);
@@ -29,7 +31,10 @@ function Cart() {
     if (cartItems.length === 0) {
         return (
             <div className="cart">
-                <h1 className="cart__title">Shopping Cart</h1>
+                <br/>
+                <div className= "titlebox">
+                    <h1 className="cart__title">Giỏ Hàng</h1>
+                </div>
                 <p className="cart__empty">Your cart is empty.</p>
             </div>
         );
@@ -37,8 +42,11 @@ function Cart() {
 
     return (
         <div className="cart">
-            <h1 className="cart__title">Shopping Cart</h1>
-
+            <br/>
+            <div className= "titlebox">
+            <h1 className="cart__title">Giỏ Hàng</h1>
+            </div>
+        <div className="cart__content">
             <div className="cart__items">
                 {cartItems.map((item) => (
                     <div className="cart-item" key={item.cartItemId}>
@@ -105,15 +113,17 @@ function Cart() {
                     </div>
                 ))}
             </div>
-            <div className="cart__footer">
-                <span className="cart__selected">
-                    Selected: {cartItems.filter((item) => item.selected).length}
-                </span>
-
-                <button className="cart__checkout">
-                    Proceed to Checkout
+            <div className="cart__summary">
+                <h2>Tóm tắt đơn hàng</h2>
+                <CartItemSummary/>
+                <button
+                    className="cart__checkout"
+                    disabled={selectedItems.length === 0}
+                >
+                    Tiến hành thanh toán
                 </button>
             </div>
+        </div>
         </div>
     );
 }
