@@ -11,6 +11,7 @@ import Cart from "./pages/Cart.tsx";
 import Profile from "./pages/Profile.tsx";
 import OrderHistory from "./pages/OrderHistory.tsx";
 import About from "./pages/About.tsx";
+import Checkout from "./pages/Checkout.tsx";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: "about",
                 element: <About />
+            },
+            {
+                path: "checkout",
+                element: <Checkout />
             }
         ],
     },

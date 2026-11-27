@@ -17,5 +17,18 @@ export const store = configureStore({
     }
 });
 
+let previousCart = store.getState().cart;
+store.subscribe(() => {
+    const currentCart = store.getState().cart;
+    if (currentCart !== previousCart) {
+        previousCart = currentCart;
+
+        localStorage.setItem(
+            "cart",
+            JSON.stringify(currentCart.items)
+        );
+    }
+});
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
