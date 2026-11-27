@@ -20,7 +20,9 @@
       "image": "https://placehold.co/600x400?text=Pho+bo",
       "category": "Món nước",
       "rating": 4.8,
-      "isFeatured": true
+      "isFeatured": true,
+      "sizeIds": [1, 2, 3],
+      "toppingIds": [1, 2, 7, 8, 9]
     },
     {
       "id": 2,
@@ -30,7 +32,9 @@
       "image": "https://placehold.co/600x400?text=Bun+bo+Hue",
       "category": "Món nước",
       "rating": 4.7,
-      "isFeatured": true
+      "isFeatured": true,
+      "sizeIds": [1, 2, 3],
+      "toppingIds": [1, 3, 4, 5, 8]
     },
     {
       "id": 3,
@@ -40,7 +44,9 @@
       "image": "https://placehold.co/600x400?text=Hu+tieu",
       "category": "Món nước",
       "rating": 4.5,
-      "isFeatured": false
+      "isFeatured": false,
+      "sizeIds": [1, 2, 3],
+      "toppingIds": [2, 6, 7, 8, 9]
     },
     {
       "id": 4,
@@ -50,7 +56,9 @@
       "image": "https://placehold.co/600x400?text=Com+tam+suon",
       "category": "Món cơm",
       "rating": 4.8,
-      "isFeatured": true
+      "isFeatured": true,
+      "sizeIds": [1, 2, 3],
+      "toppingIds": [10, 11, 12, 14, 15]
     },
     {
       "id": 5,
@@ -60,7 +68,9 @@
       "image": "https://placehold.co/600x400?text=Com+ga+xoi+mo",
       "category": "Món cơm",
       "rating": 4.6,
-      "isFeatured": true
+      "isFeatured": true,
+      "sizeIds": [1, 2, 3],
+      "toppingIds": [14, 15, 16]
     },
     {
       "id": 6,
@@ -70,7 +80,9 @@
       "image": "https://placehold.co/600x400?text=Com+chien",
       "category": "Món cơm",
       "rating": 4.4,
-      "isFeatured": false
+      "isFeatured": false,
+      "sizeIds": [1, 2, 3],
+      "toppingIds": [13, 14, 16]
     },
     {
       "id": 7,
@@ -80,7 +92,9 @@
       "image": "https://placehold.co/600x400?text=Banh+mi+thit",
       "category": "Món nhanh",
       "rating": 4.7,
-      "isFeatured": true
+      "isFeatured": true,
+      "sizeIds": [],
+      "toppingIds": [14, 17, 18, 19, 20]
     },
     {
       "id": 8,
@@ -90,7 +104,9 @@
       "image": "https://placehold.co/600x400?text=Banh+mi+op+la",
       "category": "Món nhanh",
       "rating": 4.3,
-      "isFeatured": false
+      "isFeatured": false,
+      "sizeIds": [],
+      "toppingIds": [14, 17, 18, 20]
     },
     {
       "id": 9,
@@ -100,7 +116,9 @@
       "image": "https://placehold.co/600x400?text=Goi+cuon",
       "category": "Món nhanh",
       "rating": 4.6,
-      "isFeatured": false
+      "isFeatured": false,
+      "sizeIds": [],
+      "toppingIds": [21, 22]
     },
     {
       "id": 10,
@@ -110,7 +128,9 @@
       "image": "https://placehold.co/600x400?text=Tra+dao+cam+sa",
       "category": "Đồ uống",
       "rating": 4.7,
-      "isFeatured": true
+      "isFeatured": true,
+      "sizeIds": [4, 5, 6],
+      "toppingIds": [23, 24, 27]
     },
     {
       "id": 11,
@@ -120,7 +140,9 @@
       "image": "https://placehold.co/600x400?text=Ca+phe+sua+da",
       "category": "Đồ uống",
       "rating": 4.8,
-      "isFeatured": false
+      "isFeatured": false,
+      "sizeIds": [4, 5, 6],
+      "toppingIds": [25, 26, 28, 29]
     },
     {
       "id": 12,
@@ -130,8 +152,59 @@
       "image": "https://placehold.co/600x400?text=Sinh+to+bo",
       "category": "Đồ uống",
       "rating": 4.5,
-      "isFeatured": false
+      "isFeatured": false,
+      "sizeIds": [4, 5, 6],
+      "toppingIds": [23, 29, 30]
     }
+  ],
+  "sizes": [
+    { "id": 1, "label": "M", "extra": 0, "type": "food", "note": "Phần tiêu chuẩn" },
+    { "id": 2, "label": "L", "extra": 5000, "type": "food", "note": "Phần lớn" },
+    { "id": 3, "label": "XL", "extra": 10000, "type": "food", "note": "Phần siêu lớn" },
+    { "id": 4, "label": "M", "extra": 0, "type": "drink", "note": "360ml" },
+    { "id": 5, "label": "L", "extra": 6000, "type": "drink", "note": "500ml" },
+    { "id": 6, "label": "XL", "extra": 10000, "type": "drink", "note": "700ml" }
+  ],
+  "toppings": [
+    { "id": 1, "name": "Thêm thịt bò tái", "price": 15000, "type": "noodle" },
+    { "id": 2, "name": "Thêm bò viên", "price": 10000, "type": "noodle" },
+    { "id": 3, "name": "Thêm giò heo", "price": 15000, "type": "noodle" },
+    { "id": 4, "name": "Thêm chả cua", "price": 10000, "type": "noodle" },
+    { "id": 5, "name": "Thêm huyết", "price": 5000, "type": "noodle" },
+    { "id": 6, "name": "Thêm tôm", "price": 12000, "type": "noodle" },
+    { "id": 7, "name": "Thêm trứng cút", "price": 5000, "type": "noodle" },
+    { "id": 8, "name": "Thêm sợi (bánh phở/bún/hủ tiếu)", "price": 5000, "type": "noodle" },
+    { "id": 9, "name": "Thêm quẩy", "price": 5000, "type": "noodle" },
+    { "id": 10, "name": "Thêm sườn nướng", "price": 18000, "type": "rice" },
+    { "id": 11, "name": "Thêm chả trứng", "price": 8000, "type": "rice" },
+    { "id": 12, "name": "Thêm bì", "price": 6000, "type": "rice" },
+    { "id": 13, "name": "Thêm lạp xưởng", "price": 8000, "type": "rice" },
+    { "id": 14, "name": "Thêm trứng ốp la", "price": 6000, "type": "rice" },
+    { "id": 15, "name": "Thêm cơm", "price": 5000, "type": "rice" },
+    { "id": 16, "name": "Thêm gà chiên giòn", "price": 20000, "type": "rice" },
+    { "id": 17, "name": "Thêm pate", "price": 3000, "type": "quick" },
+    { "id": 18, "name": "Thêm xúc xích", "price": 5000, "type": "quick" },
+    { "id": 19, "name": "Thêm chả lụa", "price": 5000, "type": "quick" },
+    { "id": 20, "name": "Thêm phô mai", "price": 7000, "type": "quick" },
+    { "id": 21, "name": "Thêm tương đậu phộng", "price": 3000, "type": "quick" },
+    { "id": 22, "name": "Thêm tôm luộc", "price": 10000, "type": "quick" },
+    { "id": 23, "name": "Thêm trân châu đen", "price": 7000, "type": "drink" },
+    { "id": 24, "name": "Thêm thạch rau câu", "price": 5000, "type": "drink" },
+    { "id": 25, "name": "Thêm pudding", "price": 8000, "type": "drink" },
+    { "id": 26, "name": "Thêm kem cheese", "price": 10000, "type": "drink" },
+    { "id": 27, "name": "Thêm đào miếng", "price": 8000, "type": "drink" },
+    { "id": 28, "name": "Thêm shot cà phê", "price": 8000, "type": "drink" },
+    { "id": 29, "name": "Thêm sữa đặc", "price": 3000, "type": "drink" },
+    { "id": 30, "name": "Thêm kem tươi", "price": 7000, "type": "drink" }
+  ],
+  "reviews": [
+    { "id": 1, "mealId": 1, "userId": 1, "userName": "Nguyễn Văn A", "rating": 5, "comment": "Nước dùng rất đậm đà, thịt bò mềm.", "createdAt": "2026-11-13T12:10:00" },
+    { "id": 2, "mealId": 1, "userId": 2, "userName": "Quản trị viên", "rating": 4, "comment": "Ngon, giao hơi trễ vài phút.", "createdAt": "2026-11-14T12:25:00" },
+    { "id": 3, "mealId": 2, "userId": 1, "userName": "Nguyễn Văn A", "rating": 5, "comment": "Vị sả và mắm ruốc rất chuẩn Huế.", "createdAt": "2026-11-15T11:50:00" },
+    { "id": 4, "mealId": 4, "userId": 1, "userName": "Nguyễn Văn A", "rating": 5, "comment": "Sườn nướng thơm, cơm dẻo.", "createdAt": "2026-11-16T12:05:00" },
+    { "id": 5, "mealId": 7, "userId": 2, "userName": "Quản trị viên", "rating": 4, "comment": "Bánh mì giòn, nhân đầy đặn.", "createdAt": "2026-11-17T09:40:00" },
+    { "id": 6, "mealId": 10, "userId": 1, "userName": "Nguyễn Văn A", "rating": 5, "comment": "Trà thơm, đào giòn, uống rất đã.", "createdAt": "2026-11-18T14:15:00" },
+    { "id": 7, "mealId": 11, "userId": 2, "userName": "Quản trị viên", "rating": 5, "comment": "Cà phê đậm vị, vừa ngọt.", "createdAt": "2026-11-19T08:30:00" }
   ],
   "users": [
     {
