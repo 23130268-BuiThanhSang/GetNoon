@@ -10,6 +10,8 @@ export type Meal = {
     category: string;
     rating: number;
     isFeatured: boolean;
+    sizeIds?:number[];
+    toppingIds?:number[];
 };
 
 const mealSlice = createSlice({
