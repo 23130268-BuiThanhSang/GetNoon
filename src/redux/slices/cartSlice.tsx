@@ -8,10 +8,24 @@ export type CartItem = {
     selected: boolean;
 };
 
+const loadCart = (): CartItem[] => {
+    try {
+        const savedCart = localStorage.getItem("cart");
+
+        if (savedCart) {
+            return JSON.parse(savedCart) as CartItem[];
+        }
+    } catch (error) {
+        console.error("Failed to load cart:", error);
+    }
+
+    return [];
+};
+
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        items: [] as CartItem[]
+        items: loadCart()
     },
     reducers: {
         addToCart: (state, action: PayloadAction<CartItem>) => {

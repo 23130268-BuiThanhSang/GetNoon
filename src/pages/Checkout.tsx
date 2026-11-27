@@ -1,19 +1,18 @@
 import { useState } from "react";
 import CartItemSummary from "../components/CartItemSummary";
 import "../assets/scss/checkout.css";
-
 function Checkout() {
     const [note, setNote] = useState("");
     const [paymentMethod, setPaymentMethod] = useState("COD");
 
     return (
+        <div className="main_container">
+            <br/>
+            <div className= "titlebox">
+                <h1 className="cart__title">Thanh Toán</h1>
+            </div>
         <div className="checkout">
             <div className="checkout__left">
-
-                <section className="checkout__section">
-                    <h2>Order Details</h2>
-                    <CartItemSummary />
-                </section>
 
                 <section className="checkout__section">
                     <h2>Note for the Cook</h2>
@@ -62,17 +61,35 @@ function Checkout() {
                         </div>
 
                         <div className="checkout__field">
-                            <label htmlFor="deliveryDate">Delivery Date</label>
-                            <input
-                                id="deliveryDate"
-                                type="date"
-                            />
+                            <label>Delivery Date</label>
+                            <label className="checkout__date-option">
+                                <input
+                                    type="radio"
+                                    name="deliveryDate"
+                                    value="Today"
+                                    defaultChecked
+                                />
+                                Today
+                            </label>
+
+                            <label className="checkout__date-option">
+                                <input
+                                    type="radio"
+                                    name="deliveryDate"
+                                    value="Tomorrow"
+                                />
+                                Tomorrow
+                            </label>
                         </div>
                     </div>
                 </section>
             </div>
 
             <aside className="checkout__right">
+                <section className="checkout__section">
+                    <h2>Order Details</h2>
+                    <CartItemSummary />
+                </section>
 
                 <section className="checkout__section">
                     <h2>Payment Method</h2>
@@ -119,6 +136,7 @@ function Checkout() {
                     </p>
                 </section>
             </aside>
+        </div>
         </div>
     );
 }
