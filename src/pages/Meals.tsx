@@ -15,6 +15,9 @@ function Meals() {
     const categoriesFromStore = useAppSelector((state) => state.categories?.items ?? []);
     const [sortBy, setSortBy] = useState<string>("featured");
     const { data: categoriesData, loading: categoriesLoading, error: categoriesError } = useAPI("http://localhost:3001/categories");
+    const visible_count = 8;
+    const step_count = 8;
+    const [visibleCount, setVisibleCount] = useState<number>(visible_count);
 
     useEffect(() => {
         if (categoriesData) {
@@ -64,16 +67,40 @@ function Meals() {
         });
     }, [meals, selectedCategory, priceRange, searchQuery, sortBy]);
 
+    const hasActiveFilters =
+        searchQuery.trim() !== "" ||
+        selectedCategory !== "all" ||
+        priceRange !== "all" ||
+        sortBy !== "featured";
+
+    const handleResetFilters = () => {
+        setSearchQuery("");
+        setSelectedCategory("all");
+        setPriceRange("all");
+        setSortBy("featured");
+    };
+
+    useEffect(() => {
+        setVisibleCount(visible_count);
+    }, [searchQuery, selectedCategory, priceRange, sortBy]);
+
+    const visibleMeals = useMemo(
+        () => filteredMeals.slice(0, visibleCount),
+        [filteredMeals, visibleCount]
+    );
+
+    const remainingCount = Math.max(filteredMeals.length - visibleMeals.length, 0);
+
     return (
         <div className="meals_body">
             <h1>Thực đơn hôm nay</h1>
             <div className="meals_filter">
                 <div className="filter_content">
-                    <p>Tìm kiếm</p>
+                    <p className="name_filter">Tìm kiếm</p>
                     <input className="meals_input" type="text" placeholder="Nhập tên món ăn" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                 </div>
                 <div className="filter_content">
-                    <p>Danh mục</p>
+                    <p className="name_filter">Danh mục</p>
                     <select className="meals_select" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
                         <option value="all">{categoriesLoading ? "Đang tải danh mục..." : "Tất cả danh mục"}</option>
                         {categories.map(cat => (
@@ -85,7 +112,7 @@ function Meals() {
                     )}
                 </div>
                 <div className="filter_content">
-                    <p>Khoảng giá</p>
+                    <p className="name_filter">Khoảng giá</p>
                     <select className="meals_select" value="priceRange" onChange={(e) => setPriceRange(e.target.value)}>
                         <option value="all">Tất cả mức giá</option>
                         <option value="under_50k">Dưới 50,000đ</option>
@@ -95,7 +122,7 @@ function Meals() {
                     </select>
                 </div>
                 <div className="filter_content">
-                    <p>Sắp xếp</p>
+                    <p className="name_filter">Sắp xếp</p>
                     <select className="meals_select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
                         <option value="featured">Nổi bật</option>
                         <option value="name_asc">Tên A - Z</option>
@@ -104,6 +131,11 @@ function Meals() {
                         <option value="price_desc">Giá giảm dần</option>
                     </select>
                 </div>
+                {hasActiveFilters && (
+                    <div className="filter_actions">
+                        <button type="button" className="btn_clear_filter" onClick={handleResetFilters}>Xóa bộ lọc</button>
+                    </div>
+                )}
             </div>
             <div className="meals_container">
                 {filteredMeals.map((meal) => (
@@ -125,6 +157,11 @@ function Meals() {
                     </div>
                 ))}
             </div>
+            {remainingCount > 0 && (
+                <div className="meals_pagination">
+                    <button type="button" onClick={() => setVisibleCount((prev) => prev + step_count)}>Xem thêm ({remainingCount} món)</button>
+                </div>
+            )}
         </div>
     );
 }

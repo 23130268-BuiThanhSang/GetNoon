@@ -27,13 +27,7 @@ const mealSlice = createSlice({
         },
         setCategories: (state, action: PayloadAction<Category[]>) => {
             state.categories = action.payload;
-        },
-        setCategoryFilter: (state, action: PayloadAction<string>) => {
-            state.category = action.payload;
-        },
-        setPriceRangeFilter: (state, action: PayloadAction<string>) => {
-            state.priceRange = action.payload;
-        },
+        }
     }
 });
 
