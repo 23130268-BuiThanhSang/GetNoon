@@ -7,6 +7,9 @@ import {Link, useParams} from "react-router-dom";
 
 
 type Size = {id:number, label:string, extra:number,note:string};
+type Topping ={id:number, name:string, price:number};
+
+
 const API_URL = "http://localhost:3001";
 function MealDetail() {
     const { id } = useParams();
@@ -17,6 +20,12 @@ function MealDetail() {
 
     const [sizes, setSizes] = useState<Size[]>([]);
     const [size, setSize] = useState<Size|null>(null);
+
+    const [toppings, setToppings] = useState<Topping[]>([]);
+    const[selectedTopping, setSelectedTopping] = useState<Topping[]>([]);
+
+
+
 
     useEffect(() => {
         if(!meal?.sizeIds?.length) {
@@ -38,10 +47,53 @@ function MealDetail() {
         })
         return () => {ignore=true};
     }, [meal]);
+
+    useEffect(() => {
+        if(!meal?.toppingIds?.length) {
+            setToppings([]);
+            setSelectedTopping([]);
+            return;
+        }
+        let ignore = false;
+        const query = meal.toppingIds.map((id)=>`id=${id}`).join('&');
+        fetch(`${API_URL}/toppings?${query}`)
+            .then(
+                (res)=>res.json()
+            ).then((data:Topping[])=>{
+            if(ignore){
+                return;
+            }
+            setToppings(data);
+            setSelectedTopping([]);
+        })
+        return () => {ignore=true};
+    }, [meal]);
+
+    const toggleToppings = (t:Topping) => {
+            setSelectedTopping((prev)=>
+                prev.some((x)=>x.id===t.id)?prev.filter((x)=>x.id!==t.id):[...prev,t]
+            );
+    }
+
+
+
+
+
+
+
     if (!meal) {
         return <h1>Meal not found</h1>;
     }
-    const unitPrice = meal.price+(size?.extra ??0);
+
+
+
+
+
+    const unitPrice = meal.price+(size?.extra ??0)+selectedTopping.reduce((sum,t)=> sum+t.price,0);
+
+
+
+
     return (
         <div className="meal-detail">
             <Link to="/meals">← Back to Meals</Link>
@@ -73,8 +125,22 @@ function MealDetail() {
                             ))}
                         </div>
                     )}
-
-                    <p className="meal-detail__price">{unitPrice.toLocaleString()} VND</p>
+                    {toppings.length > 0 && (
+                        <div className="meal-detail-toppings">
+                            <h3>Chọn topping</h3>
+                            {toppings.map((t) => (
+                                <label key={t.id}>
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedTopping.some((x) => x.id === t.id)}
+                                        onChange={() => toggleToppings(t)}
+                                    />
+                                    {t.name} (+{t.price.toLocaleString()}đ)
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                    <p className="meal-detail-price">{unitPrice.toLocaleString()} VND</p>
                 </div>
             </div>
         </div>
