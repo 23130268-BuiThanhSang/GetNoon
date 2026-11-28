@@ -1,5 +1,6 @@
 
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type {Category} from "./CategoriesSlice.tsx";
 
 export type Meal = {
     id: number;
@@ -17,11 +18,17 @@ export type Meal = {
 const mealSlice = createSlice({
     name: "meals",
     initialState: {
-        items: [] as Meal[]
+        items: [] as Meal[],
+        categories: [] as Category[],
+        category: "all",
+        priceRange: "all",
     },
     reducers: {
         setMeals: (state, action: PayloadAction<Meal[]>) => {
             state.items = action.payload;
+        },
+        setCategories: (state, action: PayloadAction<Category[]>) => {
+            state.categories = action.payload;
         }
     }
 });
