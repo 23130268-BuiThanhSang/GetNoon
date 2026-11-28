@@ -8,7 +8,7 @@ import {Link, useParams} from "react-router-dom";
 
 type Size = {id:number, label:string, extra:number,note:string};
 type Topping ={id:number, name:string, price:number};
-
+type Review ={id:number, mealId:number, userId:number,userName:string,rating:number,comment:string, createdAt:string};
 
 const API_URL = "http://localhost:3001";
 function MealDetail() {
@@ -23,7 +23,7 @@ function MealDetail() {
 
     const [toppings, setToppings] = useState<Topping[]>([]);
     const[selectedTopping, setSelectedTopping] = useState<Topping[]>([]);
-
+    const [reviews, setReviews] = useState<Review[]>([]);
 
 
 
@@ -76,9 +76,25 @@ function MealDetail() {
     }
 
 
+    const mealId = meal?.id;
+    useEffect(() => {
+        if(mealId==undefined) {
+            return;
+        }
+        let ignore = false;
+        fetch(`${API_URL}/reviews?mealId=${mealId}`).then((res)=>res.json()).then((data:Review[])=>{
+            if(ignore){
+                return;
+            }
+            const sorted = [...data].sort((a:Review, b:Review) =>b.createdAt.localeCompare(a.createdAt));
+            setReviews(sorted);
 
+        })
+        return () => {ignore=true};
 
+    }, [mealId]);
 
+    // const avgRating = reviews.length
 
 
     if (!meal) {
@@ -140,6 +156,9 @@ function MealDetail() {
                             ))}
                         </div>
                     )}
+                    {
+
+                    }
                     <p className="meal-detail-price">{unitPrice.toLocaleString()} VND</p>
                 </div>
             </div>
