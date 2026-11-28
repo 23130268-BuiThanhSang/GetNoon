@@ -11,7 +11,9 @@ function Meals() {
     const meals = useAppSelector((state) => state.meals.items);
     const [searchQuery, setSearchQuery] = useState<string>("");
     const [selectedCategory, setSelectedCategory] = useState<string>("all");
+    const [priceRange, setPriceRange] = useState<string>("all");
     const categoriesFromStore = useAppSelector((state) => state.categories?.items ?? []);
+    const [sortBy, setSortBy] = useState<string>("featured");
     const { data: categoriesData, loading: categoriesLoading, error: categoriesError } = useAPI("http://localhost:3001/categories");
 
     useEffect(() => {
@@ -22,13 +24,45 @@ function Meals() {
 
     const categories: Category[] = categoriesFromStore.length > 0 ? categoriesFromStore : ((categoriesData as Category[]) || []);
     const filteredMeals = useMemo(() => {
-        return meals.filter((meal) => {
+        const result = meals.filter((meal) => {
             const matchesCategory = selectedCategory === "all" || meal.category === selectedCategory;
             const matchesSearch = !searchQuery.trim() || meal.name.toLowerCase().includes(searchQuery.trim().toLowerCase());
+            let matchesPrice: boolean;
 
-            return matchesCategory && matchesSearch;
+            switch (priceRange) {
+                case "under_50k":
+                    matchesPrice = meal.price < 50000;
+                    break;
+                case "50k_75k":
+                    matchesPrice = meal.price >= 50000 && meal.price <= 75000;
+                    break;
+                case "75k_100k":
+                    matchesPrice = meal.price > 75000 && meal.price <= 100000;
+                    break;
+                case "over_100k":
+                    matchesPrice = meal.price > 100000;
+                    break;
+                default:
+                    matchesPrice = true;
+            }
+            return matchesCategory && matchesSearch && matchesPrice;
         });
-    }, [meals, selectedCategory, searchQuery]);
+
+        return [...result].sort((a, b) => {
+            switch (sortBy) {
+                case "name_asc":
+                    return a.name.localeCompare(b.name, "vi");
+                case "name_desc":
+                    return b.name.localeCompare(a.name, "vi");
+                case "price_asc":
+                    return a.price - b.price;
+                case "price_desc":
+                    return b.price - a.price;
+                default:
+                    return 0;
+            }
+        });
+    }, [meals, selectedCategory, priceRange, searchQuery, sortBy]);
 
     return (
         <div className="meals_body">
@@ -52,7 +86,7 @@ function Meals() {
                 </div>
                 <div className="filter_content">
                     <p>Khoảng giá</p>
-                    <select className="meals_select" value="priceRange">
+                    <select className="meals_select" value="priceRange" onChange={(e) => setPriceRange(e.target.value)}>
                         <option value="all">Tất cả mức giá</option>
                         <option value="under_50k">Dưới 50,000đ</option>
                         <option value="50k_75k">50,000 - 75,000đ</option>
@@ -62,12 +96,12 @@ function Meals() {
                 </div>
                 <div className="filter_content">
                     <p>Sắp xếp</p>
-                    <select className="meals_select">
-                        <option>Nổi bật</option>
-                        <option>Tên A - Z</option>
-                        <option>Tên Z - A</option>
-                        <option>Giá tăng dần</option>
-                        <option>Giá giảm dần</option>
+                    <select className="meals_select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                        <option value="featured">Nổi bật</option>
+                        <option value="name_asc">Tên A - Z</option>
+                        <option value="name_desc">Tên Z - A</option>
+                        <option value="price_asc">Giá tăng dần</option>
+                        <option value="price_desc">Giá giảm dần</option>
                     </select>
                 </div>
             </div>
